@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <script src="inicio.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Normalize/normalize.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="../styles/reconocimiento.css">
+        <link rel="icon" type="image/png" href="../image/Favicon icon/Alpataco-Favicon-2_png.ico" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="../image/Favicon icon/favicon.svg films/image/Favicon icon/favicon.svg"/>
+        <link rel="shortcut icon" href="../image/Favicon icon/Alpataco-Favicon-2_png.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../Alpataco films/image/Favicon icon/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+        <link rel="manifest" href="../image/Favicon icon/web-app-manifest-512x512.png" />
+        <title>Alpataco films</title>
+    </head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../image/imagenes/alpataco logo.png" alt="Logo Alpataco" loading="lazy">
+        </div>
+        <input type="checkbox" id="check" aria-label="Toggle navigation menu">
+        <label for="check" class="icons">
+            <i class="bi bi-list" id="menu-icon"></i>
+            <i class="bi bi-x-lg" id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+            <a href="../index.html" style="--i:0">
+                <div class="stacked-text">
+                    <span>Inicio</span>
+                    <span></span>
+                </div>
+            </a>
+            <a href="Reconocimiento.html" style="--i:1">
+                <div class="stacked-text">
+                    <span>Reconocimientos</span>
+                    <span></span>
+                </div>
+            </a>
+            <a href="peliculas.html" style="--i:2">Peliculas</a>
+            <a href="galeria.html" style="--i:3">Galería</a>
+            <a href="videos.html">Prensa</a>
+            <a href="contacto.html" style="--i:4">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <section class="content">
+            <div class="vacio"></div>
+            <div class="home">
+                <div class="home-header">
+                    <h1>Bienvenidos a Alpataco Films</h1>
+                    <p>Explora nuestras producciones, reconocimientos en la industria cinematográfica y  siguenos en nuestras redes sociales.</p>
+                </div>
+                <div class="home-media-icons">
+                    <a href="https://www.facebook.com/profile.php?id=61556811579022" target="_blank" aria-label="Facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/alpataco.films/" target="_blank" aria-label="Instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://www.youtube.com/@Alpatacofilms" target="_blank" aria-label="YouTube">
+                        <i class="bi bi-youtube"></i>
+                    </a>
+                    <a href="https://www.threads.net/@alpataco.films" target="_blank" aria-label="Threads">
+                        <i class="bi bi-threads"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@alpataco.films" target="_blank" aria-label="TikTok">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                    <a href="https://vimeo.com/alpatacofilms" target="_blank" aria-label="Vimeo">
+                        <i class="bi bi-vimeo"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?phone=3155315725&text=Hola quiero chatear con ustedes" target="_blank" aria-label="WhatsApp">
+                        <i class="bi bi-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <section class="modern-section">
+                <div class="container">
+                    <header class="section-header">
+                        <h2 class="title">Nuestros Reconocimientos</h2>
+                        <p class="description">
+                            "En Alpataco Films, nos sentimos honrados de haber sido reconocidos en prestigiosos festivales internacionales por la calidad y originalidad de nuestras producciones. Estos logros reflejan nuestro compromiso con la excelencia y nuestra pasión por contar historias que trascienden fronteras. Te invitamos a explorar más sobre nuestros proyectos galardonados y a descubrir cómo seguimos dejando huella en la industria cinematográfica."
+                        </p>
+                    </header>
+                    <div class="section-content">
+                        <button class="cta-button" onclick="toggleExtraText()">Conoce más de nosotros</button>
+                        <div id="extra-text" class="texto-oculto" style="display: none;">
+                            <div class="par-1">
+                                <div class="quienes-somos">
+                                    <h3>Quiénes Somos</h3>
+                                    <p><strong>Alpataco Films</strong> Somos una productora cinematográfica fundada en Colombia que responde a la inquietud de su fundador, Mauro Mauad, de contar historias. Llegando a diferentes públicos objetivos, generando experiencias intensas y liberadoras. Contar con un equipo de trabajo que comprende que es parte de su proyecto, se logra gracias al profesionalismo, conocimiento, creatividad, visión artística y espíritu de adaptación para afrontar cambios inesperados en cada producción.</p>
+                                </div>
+                                <div class="nuestros-objetivos">
+                                    <h3>Nuestros Objetivos</h3>
+                                    <p>Crear contenido audiovisual que nos permita transmitir la identidad de nuestra marca generando confianza y resaltando el compromiso por crear producciones que evoquen reflexiones y cambios positivos en los espectadores.</p>
+                                </div>
+                            </div>
+                            <div class="par-2">
+                                <div class="nuestro-proposito">
+                                    <h3>Nuestro Propósito</h3>
+                                    <p>Desarrollar producciones audiovisuales que satisfagan plenamente a nuestros clientes, los proyectos deben ser una fuente de inspiración, aportar valores y provocar una dirección enriquecedora y positiva. En Alpataco estamos conscientes de la importancia que tiene generar emociones humanas, mezclando creatividad y estrategia.</p>
+                                </div>
+                                <div class="a-donde-queremos-llegar">
+                                    <h3>A dónde Queremos Llegar</h3>
+                                    <p>Convertirnos en una empresa líder en producción audiovisual, que se caracterice por ofrecer soluciones innovadoras, y calidad en servicios. Ser una empresa que se destaque por la calidad humana y profesional de un equipo de trabajo que entiende que al promover el aprendizaje y la colaboración, se logran grandes resultados. “Contribuyendo de forma positiva al arte”.</p>
+                                </div>
+                            </div>
+                            <div class="par-3">
+                                <div class="nuestros-valores">
+                                    <h3>Nuestros Valores</h3>
+                                    <p>Alpataco Films cuenta con una  filosofía basada en la honestidad brindando un servicio responsable y con transparencia que refleje lo que pensamos y lo que creemos. Miramos al presente y al futuro mostrando nuestros servicios desde la integración de un equipo en función del logro de objetivos compartidos, sumando talento, compromiso, conocimientos y habilidades colaborativas. Trabajamos con convicción para poder alcanzar el crecimiento profesional y personal de todos nuestros colaboradores que hacen parte de nuestra empresa en el presente como en el </p><br>    
+                                    <p>Sumarse a Alpataco Films es invertir en historias que dejan huella.</p>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        <div class="Laureles">
+            <h2 class="laureles-title">Laureles </h2>
+            <div class="laureles-container">
+                <div class="laureles-dorados">
+                    <img src="../image/a-Botones/1.png" alt="Laurel 1" loading="lazy">
+                </div>
+                <div class="laureles-dorados">
+                    <img src="../image/a-Botones/2.png" alt="Laurel 2" loading="lazy">
+                </div>
+                <div class="laureles-dorados">
+                    <img src="../image/a-Botones/3.png" alt="Laurel 3" loading="lazy">
+                </div>
+                <div class="laureles-dorados">
+                    <img src="../image/a-Botones/4.png" alt="Laurel 4" loading="lazy">
+                </div>
+                <div class="laureles-dorados">
+                    <img src="../image/a-Botones/5.png" alt="Laurel 5" loading="lazy">
+                </div>
+
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/6.png" alt="Laurel 6" loading="lazy">
+                </div>
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/7.png" alt="Laurel 7" loading="lazy">
+                </div>
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/8.png" alt="Laurel 8" loading="lazy">
+                </div>
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/9.png" alt="Laurel 9" loading="lazy">
+                </div>  
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/10.png" alt="Laurel 10" loading="lazy">
+                </div> 
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/11.png" alt="Laurel 11" loading="lazy">
+                </div>
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/12.png" alt="Laurel 12" loading="lazy">
+                </div> 
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/13.png" alt="Laurel 13" loading="lazy">
+                </div> 
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/14.png" alt="Laurel 14" loading="lazy">
+                </div> 
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/15.png" alt="Laurel 15" loading="lazy">
+                </div> 
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/16.png" alt="Laurel 16" loading="lazy">
+                </div>
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/17.png" alt="Laurel 17" loading="lazy">
+                </div> 
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/18.png" alt="Laurel 18" loading="lazy">
+                </div> 
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/19.png" alt="Laurel 19" loading="lazy">
+                </div> 
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/20.png" alt="Laurel 20" loading="lazy">
+                </div>
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/21.png" alt="Laurel 21" loading="lazy">
+                </div>
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/22.png" alt="Laurel 22" loading="lazy">
+                </div> 
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/23.png" alt="Laurel 23" loading="lazy">
+                </div> 
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/24.png" alt="Laurel 24" loading="lazy">
+                </div> 
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/25.png" alt="Laurel 25" loading="lazy">
+                </div> 
+                <div class="laureles-item">
+                    <img src="../image/a-Botones/26.png" alt="Laurel 26" loading="lazy">
+                </div>
+
+                <div class="laureles-oscuros">
+                    <img src="../image/a-Botones/27.png" alt="Laurel 27" loading="lazy">
+                </div> 
+                <div class="laureles-oscuros">
+                    <img src="../image/a-Botones/28.png" alt="Laurel 28" loading="lazy">
+                </div> 
+                <div class="laureles-oscuros">
+                    <img src="../image/a-Botones/29.png" alt="Laurel 29" loading="lazy">
+                </div> 
+                <div class="laureles-oscuros">
+                    <img src="../image/a-Botones/30.png" alt="Laurel 30" loading="lazy">
+                </div>
+                <div class="laureles-oscuros">
+                    <img src="../image/a-Botones/31.png" alt="Laurel 31" loading="lazy">
+                </div>
+                <div class="laureles-oscuros">
+                    <img src="../image/a-Botones/32.png" alt="Laurel 32" loading="lazy">
+                </div>
+                <div class="laureles-oscuros">
+                    <img src="../image/a-Botones/33.png" alt="Laurel 33" loading="lazy">
+                </div>
+                <div class="laureles-oscuros">
+                    <img src="../image/a-Botones/34.png" alt="Laurel 34" loading="lazy">
+                </div>
+                <div class="laureles-oscuros">
+                    <img src="../image/a-Botones/35.png" alt="Laurel 35" loading="lazy">
+                </div>
+                <div class="laureles-oscuros">
+                    <img src="../image/a-Botones/36.png" alt="Laurel 36" loading="lazy">
+                </div>
+                <div class="laureles-oscuros">
+                    <img src="../image/a-Botones/37.png" alt="Laurel 37" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box-1">
+                <figure>
+                    <a href="#">
+                        <img src="../image/imagenes/alpataco logo.png" alt="logo-alpataco" loading="lazy">
+                    </a>
+                </figure>
+            </div>  
+            <div class="box-2">
+                <h2>Mision
+
+                </h2>
+                <!--<p>SOMOS NARRADORES VISUALES CON MÁS DE 5 AÑOS DE TRAYECTORIA
+                    Hemos sido galardonados en diferentes certámenes publicitarios como... , entre otros.</p>-->
+                <p>Nuestra misión es crear piezas cinematográficas memorables.</p>
+                <p>Desarrollamos producciones audiovisuales que inspiren y aporten valores, fomentando un movimiento artístico profundo y constructivo. </p>
+            </div>
+            <div class="box-3">
+                <h2>SIGUENOS</h2>
+                <div class="div red-social">
+                    <a href="https://www.facebook.com/profile.php?id=61556811579022"target="_blank" class="bi bi-facebook"></a>
+                    <a href="https://www.instagram.com/alpataco.films/"target="_blank" class="bi bi-instagram"></a>
+                    <a href="https://www.youtube.com/@Alpatacofilms"target="_blank" class="bi bi-youtube"></a>
+                    <a href="https://www.threads.net/@alpataco.films"target="_blank" class="bi bi-threads"></a>
+                    <a href="https://www.tiktok.com/@alpataco.films"target="_blank" class="bi bi-tiktok"></a>
+                    <a href="https://vimeo.com/alpatacofilms"target="_blank" class="bi bi-vimeo"></a>
+                    <a href="https://api.whatsapp.com/send?phone=3155315725&text=Hola soy... y quiero escribirles acerca de..." target="_blank" class="bi bi-whatsapp"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <div class="pdf">
+                <button onclick="location.href='../document/Politica_Proteccion_Datos_Alpataco_Films_SAS.pdf';"> <i class="bi bi-caret-right-fill"> Politica de tratamiento de datos Alpataco films S.A.S PDF </i></button>
+            </div>
+        </div>
+        <div class="grupo-3">
+            <div class="credito">
+                <small>&copy; 2025 <b> Betto R. / Pilar C.</b> - Todos los Derechos Reservados - ALPATACO FILMS S.A.S.</small>
+            </div>
+        </div>
+    </div>
+    </footer>
+
+    <script src="../scripts/nosotros.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-1g6"></script>
+    <script src="../scripts/reconocimiento.js"></script>
+    <script>
+        function toggleExtraText() {
+            const contenido = document.getElementById('extra-text');
+            const button = document.querySelector('.cta-button');
+            if (contenido.style.display === 'none' || contenido.style.display === '') {
+                contenido.style.display = 'block';
+                button.textContent = 'cerrar';
+            } else {
+                contenido.style.display = 'none';
+                button.textContent = 'conoce más de nosotros';
+            }
+        }
+    </script>
+</body>
+</html>

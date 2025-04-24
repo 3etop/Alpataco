@@ -1,0 +1,1398 @@
+@import url("https://fonts.googleapis.com/css2?family=poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+
+body {
+    background-image: url('../image/nuevo contenido/background\ reconocimientos\ 3.webp'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    position: relative;
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    height: 100vh; /* Ocupa todo el alto de la ventana */
+    margin: 0; /* Elimina márgenes */
+    overflow-y: auto; /* Habilita el scroll vertical */
+    overflow-x: hidden; /* Evita el scroll horizontal no deseado */
+    display: flex;
+    flex-direction: column; /* Asegura que el footer esté al final */
+    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+    padding: 0; /* Elimina cualquier padding residual */
+    background-attachment: fixed; /* Fija la imagen para evitar que se encoja */
+}
+
+/* Asegúrate de que el body ocupe toda la altura de la ventana */
+body {
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos hijos se apilen verticalmente */
+    min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
+    margin: 0; /* Elimina márgenes */
+}
+
+/* El contenedor principal debe ocupar el espacio restante */
+main {
+    flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+    padding: 0; /* Elimina el padding adicional */
+    margin: 0; /* Elimina cualquier margen */
+}
+
+/* El footer permanece al final */
+footer {
+    margin: 0; /* Asegura que no haya espacio entre el main y el footer */
+    padding: 20px; /* Mantiene el padding interno del footer */
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    color: #fff;
+    text-align: center;
+    
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    font-size: 0.9rem;
+}
+
+.stacked-text {
+    color: #fff;
+    text-align: center; /* Centra el texto */
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    line-height: 1; /* Reduce el espacio entre las líneas */
+    font-weight: bold;
+}
+
+.stacked-text span {
+    display: block; /* Asegura que cada palabra esté en una línea separada */
+    color: inherit; /* Mantiene el color del texto padre */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
+}
+
+.stacked-text {
+    color: #fff; /* Color inicial */
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transición suave */
+}
+
+.stacked-text:hover {
+    transform: scale(1.1); /* Escalado más sutil para una transición suave */
+    color: rgb(36, 180, 180); /* Mantiene el color atractivo */
+    text-shadow: 0 2px 5px rgba(36, 180, 180, 0.5); /* Agrega un efecto de sombra para resaltar */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease, text-shadow 0.2s ease; /* Transición más fluida */
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+    transition: .5s;
+}
+
+.header:hover::after {
+    left: 100%;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    height: 50px;
+    filter: drop-shadow(0 0 5px rgba(7, 0, 0, 0.973)); /* Sombra blanca para destacar */
+}
+
+.logo img {
+    width: auto;
+    max-width: 80px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 5px rgba(7, 0, 0, 0.973)); /* Sombra blanca para destacar */
+}
+
+.navbar a {
+    font-size: 1rem; /* Slightly larger for better readability */
+    color: #ffffff; /* Maintains good contrast */
+    text-decoration: none;
+    font-weight: 600; /* Slightly bolder for emphasis */
+    margin-left: 2rem; /* Adjusted spacing for better alignment */
+    transition: transform 0.1s ease, color 0.3s ease; /* Smooth transitions for hover effects */
+    display: inline-block; /* Ensures the element can be transformed */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Adds a shadow for better visibility */
+}
+
+
+
+.navbar a:hover {
+    transform: scale(1.1); /* Escalado más sutil para una transición suave */
+    color: rgb(36, 180, 180); /* Mantiene el color atractivo */
+    text-shadow: 0 2px 5px rgba(36, 180, 180, 0.5); /* Agrega un efecto de sombra para resaltar */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease, text-shadow 0.2s ease; /* Transición más fluida */
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+
+    .logo img {
+        max-width: 120px; /* Aumenta el tamaño máximo del logo */
+        height: auto;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        z-index: -1;
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar {
+        height: 17.7rem;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar a {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
+
+    .logo img {
+        max-width: 100px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 992px){
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px){
+    .icons {
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon{
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        z-index: -1;
+        overflow: hidden;
+        transition: .3s ease;
+        
+    }
+
+    #check:checked~.navbar {
+        height: 17.7rem;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar a {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
+
+    .logo img {
+        width: 100px; /* Tamaño fijo */
+        height: 100px; /* Tamaño fijo */
+        object-fit: contain; /* Mantener proporciones */
+    }
+
+    .logo {
+        position: static;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px; /* Tamaño fijo */
+        height: 100px; /* Tamaño fijo */
+        overflow: hidden;
+    }
+
+    .home .content p {
+        font-size: 1.em; /* Aumentar aún más el tamaño de fuente */
+        color: #ffffff; /* Cambiar a blanco puro para mayor contraste */
+        line-height: 2; /* Incrementar el espaciado entre líneas */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada para mejor visibilidad */
+    }
+
+    .home .content h1 {
+        font-size: 2rem; /* Reduce el tamaño del texto */
+        text-align: center; /* Asegura que el texto esté centrado */
+    }
+
+    .home .content p {
+        font-size: 1rem; /* Reduce el tamaño del texto */
+        line-height: 1.4; /* Mejora la legibilidad */
+        margin-top: 10px; /* Ajusta el margen superior */
+    }
+
+    .home .content img {
+        width: 200px; /* Reduce el tamaño de la imagen */
+        height: auto; /* Mantiene las proporciones */
+    }
+}
+
+@media (max-width: 576px) {
+    .home .content h1 {
+        font-size: 2rem; /* Ajusta aún más el tamaño del texto */
+    }
+
+    .home .content p {
+        font-size: 0.9rem; /* Reduce aún más el tamaño del texto */
+        line-height: 1.3; /* Ajusta la legibilidad */
+    }
+
+    .home .content img {
+        width: 150px; /* Reduce aún más el tamaño de la imagen */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 80%; /* Reducir el ancho del contenedor */
+        margin: 10px auto; /* Centrar y ajustar margen */
+    }
+
+    .pie-pagina .grupo-1 {
+        gap: 10px; /* Reducir el espacio entre contenedores */
+    }
+
+    .logo img {
+        max-width: 140px; /* Aumenta aún más el tamaño del logo */
+        height: auto;
+    }
+}
+
+/*end-Header_____________________________________________________________________________*/
+/*body___________________________________________________________________________________*/
+
+.home .vacio{
+    width: 100%;
+    height: 400px;
+}
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    gap: 20px; /* Espaciado entre elementos */
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para profundidad */
+}
+
+.home-header h1 {
+    font-size: 2rem;
+    color: #ffffff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7); /* Sombra para destacar */
+    margin-bottom: 10px;
+}
+
+.home-header p {
+    font-size: 1rem;
+    color: #dcdcdc;
+    line-height: 1.6;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+}
+
+.home-media-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Espaciado entre íconos */
+
+}
+
+.home-media-icons a {
+    font-size: 1.8rem;
+    color: #ffffff;
+    transition: transform 0.3s ease, color 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Sombra para destacar */
+    filter: drop-shadow(0 0 5px rgba(255, 253, 255, 0.973)); /* Sombra blanca para destacar */
+}
+
+.home-media-icons a:hover {
+    transform: scale(1.2);
+    color: #d4af37; /* Color oro al pasar el cursor */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .home-header h1 {
+        font-size: 1.5rem; /* Reduce el tamaño del texto */
+    }
+
+    .home-header p {
+        font-size: 0.9rem; /* Reduce el tamaño del texto */
+    }
+
+    .home-media-icons a {
+        font-size: 1.5rem; /* Reduce el tamaño de los íconos */
+    }
+}
+
+@media (max-width: 576px) {
+    .home {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .home-header h1 {
+        font-size: 1.2rem; /* Ajusta aún más el tamaño del texto */
+    }
+
+    .home-header p {
+        font-size: 0.8rem; /* Ajusta aún más el tamaño del texto */
+    }
+
+    .home-media-icons a {
+        font-size: 1.2rem; /* Ajusta aún más el tamaño de los íconos */
+    }
+}
+
+.home .content {
+    z-index: 888;
+    color: #fff;
+    width: 70%;
+    margin-top: 50px;
+    opacity: 0;
+    animation: entrada 7s 8s forwards;
+}
+
+span {
+    color: rgb(245, 184, 184);
+}
+
+/*media icons*/
+
+.home .media-icons {
+    z-index: 888;
+    position: absolute;
+    right: 5px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.home .media-icons a {
+    color: #ffffffc9;
+    font-size: 1.6em;
+    transition: 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Agrega sombras oscuras */
+}
+
+.home .media-icons a:not(:last-child){
+    margin-bottom: 20px;
+} 
+
+.home .media-icons a:hover{
+    transform: scale(1.8);
+    color: rgb(180, 36, 103);
+}
+
+@media (max-width: 1040px){
+    header{
+        padding: 12px 20px;
+    }
+
+    section{
+        padding: 100px 20px;
+    }
+
+    .home .media-icons{
+        right: 15px;
+    }
+
+    header .navigation{
+        position: relative;
+        display: none;
+    }
+}
+
+
+
+/* Main _________________________________________________________________*/
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 20px; /* Espacio alrededor del contenido */
+}
+
+.vacio {
+    width: 100%;
+    height: 80px; /* Altura fija para el espacio vacío */
+    background-color: rgba(212, 175, 55, 0.2); /* Color oro semitransparente */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+.modern-section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 40px 40px 40px; /* Espacio alrededor del contenido */
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+/* Estilo de texto con color oro */
+.texto-oro {
+    color: #d4af37; /* Color oro */
+    font-weight: bold;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 10px #d4af37; /* Sombra para resaltar */
+    font-size: 1.2rem; /* Ajusta el tamaño del texto */
+    letter-spacing: 1px; /* Espaciado entre letras */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+}
+
+/* Aplica el estilo al título principal */
+.title {
+    width: 100%;
+    color: #ffffff; /* Color oro */
+    text-shadow: 0 1px 3px rgba(223, 202, 13, 0.5), 0 0 10px #d4af37;
+    font-size: 2rem; /* Ajusta el tamaño del texto */
+    font-weight: bold; /* Resalta el texto */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espacio inferior */
+
+}
+
+/* Aplica el estilo al texto de descripción */
+.description {
+    width: 100%;
+    color: #ffffff; /* Color oro */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 10px #d4af37;
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    font-weight: bold; /* Resalta el texto */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espacio inferior */
+    line-height: 1.5; /* Espaciado entre líneas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.contenido-oculto{
+    display: none; /* Oculta el contenido por defecto */
+    width: 100%;
+    padding: 20px; /* Espacio alrededor del contenido */
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 5px 10px; /* Reduce el tamaño del padding */
+    font-size: 0.8rem; /* Reduce el tamaño de la fuente */
+    font-weight: bold;
+    color: #fff;
+    background: linear-gradient(to right, #d4af37, #b8860b);
+    border: none;
+    border-radius: 3px; /* Reduce el radio de los bordes */
+    cursor: pointer;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Reduce la sombra */
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(to right, #b8860b, #d4af37);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Ajusta la sombra al pasar el cursor */
+}
+
+.cta-button:active {
+    transform: scale(0.95);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Reduce aún más la sombra al hacer clic */
+}
+
+.extra-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 100px 10px 100px; /* Espacio alrededor del contenido */
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+h3 {
+    color: #ffffff; /* Color oro */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 10px #d4af37;
+    font-size: 1.2rem; /* Ajusta el tamaño del texto */
+    font-weight: bold; /* Resalta el texto */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espacio inferior */
+    line-height: 1.5; /* Espaciado entre líneas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.extra-text .quienes-somos p {
+    color: #ffffff; /* Color oro */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 10px #d4af37;
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    font-weight: bold; /* Resalta el texto */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espacio inferior */
+    line-height: 1.5; /* Espaciado entre líneas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.texto-oculto {
+    padding: 20px; /* Espacio interno */
+    background: rgba(0, 0, 0, 0.1); /* Fondo semitransparente */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+    margin-top: 20px; /* Espacio superior */
+    animation: fadeIn 0.5s ease-in-out; /* Animación de entrada */
+}
+
+.texto-oculto h3 {
+    color: #ffffff; /* Color oro */
+    font-size: 1.5rem; /* Tamaño del texto */
+    font-weight: bold; /* Resalta el texto */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 15px; /* Espacio inferior */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0 0 10px rgba(212, 175, 55, 0.8); /* Sombra para destacar */
+}
+
+.texto-oculto p {
+    color: #ffffff; /* Color blanco */
+    font-size: 1rem; /* Tamaño del texto */
+    font-weight: bold; /* Resalta el texto */
+    line-height: 1.8; /* Espaciado entre líneas */
+    text-align: justify; /* Justifica el texto */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Sombra para destacar */
+    margin-bottom: 15px; /* Espacio inferior */
+    letter-spacing: 0.5px; /* Espaciado entre letras */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*end body________________________________________________________________________________*/
+/*footer__________________________________________________________________________________*/
+
+.pie-pagina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    padding: 30px 15px; /* Aumentar el padding para mayor espacio */
+    color: #fff;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    font-size: 1.1rem; /* Ajustar el tamaño del texto */
+    line-height: 1.6; /* Incrementar el espaciado entre líneas */
+    border-top: 2px solid rgba(255, 255, 255, 0.2); /* Agregar un borde superior */
+    color: rgba(255, 255, 255, 0.9); /* Mejorar el contraste */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Agregar sombra para destacar el texto */
+}
+
+.pie-pagina .grupo-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 30px; /* Incrementar el espacio entre los contenedores */
+}
+
+.grupo-1 .box-1 {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 150px; /* Reducir la altura */
+    gap: 15px;
+    padding: 15px; /* Reducir el padding interno */
+    border-radius: 10px;
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 20px; /* Espaciado fijo a la derecha de box-2 */
+    transform: scale(1); /* Estado inicial */
+}
+
+.grupo-1 .box-1:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+}
+
+.grupo-1 .box-1 img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 150px; /* Reducir el tamaño de la imagen */
+    height: auto; /* Mantiene proporciones */
+    object-fit: contain; /* Asegura que la imagen no se deforme */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.979)); /* Sombra blanca para destacar */
+
+}
+
+.grupo-1 .box-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    padding: 15px; /* Reducir el padding interno */
+    border-radius: 10px;
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1; /* Asegura que box-2 ocupe el espacio restante */
+    text-align: center; /* Centra el contenido de box-2 */
+}
+
+.grupo-1 .box-2 h2 {
+    font-size: 1.5rem; /* Reducir el tamaño del texto */
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing: 1px; /* Agregar espaciado entre letras */
+    font-weight: bold; /* Resaltar encabezados */
+}
+
+.grupo-1 .box-2 p {
+    font-size: 0.9rem; /* Reducir el tamaño del texto */
+    line-height: 1.6;
+    color: #dcdcdc;
+    max-width: 600px;
+    margin: 0 auto; /* Centra el párrafo */
+    text-align: center; /* Centra el texto */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
+    font-size: 1rem; /* Ajustar el tamaño del texto */
+    line-height: 1.8; /* Incrementar el espaciado entre líneas */
+    color: rgba(255, 255, 255, 0.85); /* Mejorar el contraste */
+    text-align: justify; /* Justificar el texto para un diseño más limpio */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra más sutil */
+}
+
+.grupo-1 .box-2 a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+        .grupo-1 .box-2 h2 {
+            font-size: 1.5rem;
+        }
+
+        .grupo-1 .box-2 p {
+            font-size: 0.9rem;
+        }
+
+        .grupo-1 .box-2 a {
+            font-size: 0.9rem;
+        }
+}
+
+.grupo-1 .box-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 150px; /* Reducir la altura */
+    gap: 15px;
+    padding: 15px; /* Reducir el padding interno */
+    border-radius: 10px;
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 30px; /* Espaciado fijo a la izquierda de box-2 */
+    transform: scale(1); /* Estado inicial */
+}
+
+.grupo-1 .box-3:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+}
+
+.grupo-1 .box-3 h2 {
+    font-size: 1.5rem; /* Reducir el tamaño del texto */
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
+}
+
+.grupo-1 .box-3 a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; /* Reducir el tamaño de los íconos */
+    height: 30px;
+    gap: 20px;
+    background: linear-gradient(to right, #034943, #0c6b72);
+    color: #fff;
+    font-size: 1rem; /* Reducir el tamaño del texto de los íconos */
+    border-radius: 50%; /* Hacer los íconos circulares */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.grupo-1 .box-3 a:hover {
+    transform: scale(1.2); /* Efecto de agrandamiento */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, #15686e, #064b20); /* Cambiar gradiente al pasar el cursor */
+}
+
+.pie-pagina .grupo-2 {
+    font-size: 1.1rem; /* Aumentar ligeramente el tamaño del texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 15px; /* Reducir el padding interno */
+    border-radius: 10px;
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: rgba(255, 255, 255, 0.9); /* Mejorar el contraste */
+}
+
+.grupo-2{
+    width: 100%;
+}
+
+.grupo-2 .pdf{
+    button {
+        background: linear-gradient(to right, #011312, #084440, #051d1d);
+        color: #fff;
+        font-size: 1rem; /* Aumentar el tamaño del texto */
+        font-weight: 600;
+        padding: 10px 20px; /* Ajustar el tamaño del botón */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        background: linear-gradient(to right, #011312, #084440, #051d1d); /* Cambiar gradiente */
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(to right, #15686e, #064b20); /* Cambiar gradiente al pasar el cursor */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    button:active {
+        transform: scale(0.95);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.grupo-3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 15px; /* Reducir el padding interno */
+    border-radius: 10px;
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.grupo-3 .credito{
+    font-size: 1rem; /* Ajustar el tamaño del texto */
+    color: rgba(255, 255, 255, 0.8); /* Mejorar el contraste */
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra más sutil */
+    font-size: 1rem; /* Ajustar el tamaño del texto */
+    line-height: 1.8; /* Incrementar el espaciado entre líneas */
+    color: rgba(255, 255, 255, 0.85); /* Mejorar el contraste */
+    text-align: justify; /* Justificar el texto para un diseño más limpio */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra más sutil */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing: 1px; /* Agregar espaciado entre letras */
+    font-weight: bold; /* Resaltar encabezados */
+}
+
+@media (max-width: 768px) {
+    .pie-pagina {
+        font-size: 0.9rem; /* Reducir el tamaño de fuente */
+        gap: 15px; /* Reducir el espacio entre elementos */
+    }
+
+    .pie-pagina .grupo-1 {
+        flex-direction: column; /* Apilar los contenedores verticalmente */
+        align-items: center; /* Centrar los contenedores */
+        gap: 20px; /* Espaciado uniforme entre contenedores */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 100%; /* Asegurar que todos los contenedores tengan el mismo ancho */
+        margin: 0 auto; /* Centrar los contenedores */
+    }
+
+    .pie-pagina .grupo-2,
+    .pie-pagina .grupo-3 {
+        width: 100%; /* Asegurar que ocupen todo el ancho disponible */
+        text-align: center; /* Centrar el contenido */
+        padding: 10px; /* Reducir el padding */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 90%; /* Ajustar el ancho de los contenedores */
+        margin: 0 auto; /* Centrar los contenedores */
+    }
+
+    .pie-pagina .grupo-2 {
+        text-align: center; /* Centrar el texto */
+        padding: 10px; /* Reducir el padding */
+        font-size: 0.9rem; /* Reducir el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-3 {
+        text-align: center; /* Centrar el texto */
+        padding: 10px; /* Reducir el padding */
+        font-size: 0.9rem; /* Reducir el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.8rem; /* Ajustar el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-1 {
+        flex-direction: column; /* Apilar los contenedores verticalmente */
+        align-items: center; /* Centrar los contenedores */
+        gap: 20px; /* Espaciado entre contenedores */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 90%; /* Ajustar el ancho de los contenedores */
+        margin: 0 auto; /* Centrar los contenedores */
+    }
+
+    .pie-pagina .grupo-2 {
+        text-align: center; /* Centrar el texto */
+        padding: 10px; /* Reducir el padding */
+    }
+
+    .pie-pagina .grupo-3 {
+        text-align: center; /* Centrar el texto */
+        padding: 10px; /* Reducir el padding */
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.8rem; /* Ajustar el tamaño del texto */
+    }
+}
+
+@media (max-width: 576px) {
+    .pie-pagina {
+         /* Reducir aún más el padding */
+        font-size: 0.8rem; /* Reducir el tamaño de fuente */
+        gap: 10px; /* Reducir el espacio entre elementos */
+    }
+
+    .pie-pagina .grupo-1 {
+        gap: 15px; /* Reducir el espacio entre contenedores */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 100%; /* Mantener el ancho uniforme */
+    }
+
+    .pie-pagina .grupo-2,
+    .pie-pagina .grupo-3 {
+        width: 100%; /* Mantener el ancho uniforme */
+        padding: 5px; /* Reducir aún más el padding */
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.7rem; /* Reducir el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 100%; /* Usar todo el ancho disponible */
+    }
+
+    .pie-pagina .grupo-1 .box img {
+        width: 100px; /* Reducir el tamaño de las imágenes */
+        height: auto; /* Mantener proporciones */
+    }
+
+    .pie-pagina .grupo-1 .box h2 {
+        font-size: 1.1rem; /* Reducir el tamaño de los encabezados */
+    }
+
+    .pie-pagina .grupo-1 .box p {
+        font-size: 0.7rem; /* Reducir el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-1 .box a {
+        width: 20px; /* Reducir el tamaño de los íconos */
+        height: 20px;
+        font-size: 0.8rem; /* Reducir el tamaño del texto de los íconos */
+    }
+
+    .pie-pagina .grupo-2 {
+        font-size: 0.8rem; /* Reducir el tamaño del texto */
+        padding: 5px 10px; /* Reducir el padding */
+    }
+
+    .pie-pagina .grupo-2 button {
+        font-size: 0.7rem; /* Reducir el tamaño del texto del botón */
+        padding: 5px 10px; /* Reducir el tamaño del botón */
+    }
+
+    .pie-pagina .grupo-3 {
+        font-size: 0.8rem; /* Reducir el tamaño del texto */
+        padding: 5px 10px; /* Reducir el padding */
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.7rem; /* Reducir aún más el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-1 {
+        gap: 15px; /* Reducir el espacio entre contenedores */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 100%; /* Usar todo el ancho disponible */
+    }
+
+    .pie-pagina .grupo-2 button {
+        font-size: 0.7rem; /* Reducir el tamaño del texto del botón */
+        padding: 5px 10px; /* Reducir el tamaño del botón */
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.7rem; /* Reducir aún más el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-1 .box-1 img,
+    .pie-pagina .grupo-1 .box-2 img,
+    .pie-pagina .grupo-1 .box-3 img {
+        width: 100px; /* Reducir aún más el tamaño de las imágenes */
+    }
+
+    .pie-pagina .grupo-1 .box-2 h2,
+    .pie-pagina .grupo-1 .box-3 h2 {
+        font-size: 1.1rem; /* Reducir aún más el tamaño de los encabezados */
+    }
+
+    .pie-pagina .grupo-1 .box-2 p {
+        font-size: 0.7rem; /* Reducir aún más el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-1 .box-3 a {
+        width: 20px; /* Reducir aún más el tamaño de los íconos */
+        height: 20px;
+        font-size: 0.8rem; /* Reducir aún más el tamaño del texto de los íconos */
+    }
+
+    .pie-pagina .grupo-2 button {
+        font-size: 0.7rem; /* Reducir aún más el tamaño del texto del botón */
+        padding: 5px 10px; /* Reducir aún más el tamaño del botón */
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.7rem; /* Reducir aún más el tamaño del texto */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        font-size: 0.9rem; /* Reduce el tamaño del texto para pantallas medianas */
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        font-size: 0.8rem; /* Reduce aún más el tamaño del texto para pantallas pequeñas */
+    }
+}
+
+@media (max-width: 768px) {
+    .container h2 {
+        font-size: 1.5rem; /* Reduce el tamaño de los encabezados */
+    }
+
+    .container h3 {
+        font-size: 1.2rem; /* Reduce el tamaño de los subtítulos */
+    }
+
+    .container p {
+        font-size: 0.9rem; /* Reduce el tamaño del texto */
+        line-height: 1.4; /* Ajusta el espaciado entre líneas */
+    }
+
+    .container .cta-button {
+        font-size: 0.8rem; /* Reduce el tamaño del texto del botón */
+        padding: 8px 15px; /* Ajusta el padding del botón */
+    }
+}
+
+@media (max-width: 576px) {
+    .container h2 {
+        font-size: 1.2rem; /* Reduce aún más el tamaño de los encabezados */
+    }
+
+    .container h3 {
+        font-size: 1rem; /* Reduce aún más el tamaño de los subtítulos */
+    }
+
+    .container p {
+        font-size: 0.8rem; /* Reduce aún más el tamaño del texto */
+        line-height: 1.3; /* Ajusta el espaciado entre líneas */
+    }
+
+    .container .cta-button {
+        font-size: 0.7rem; /* Reduce aún más el tamaño del texto del botón */
+        padding: 6px 10px; /* Ajusta aún más el padding del botón */
+    }
+}
+
+/*galeria*/
+
+.laureles {
+    width: 70%; /* Reduce el ancho para alejarlo de los bordes */
+    height: 100%; /* Asegura que ocupe todo el espacio disponible */
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px; /* Incrementa el espacio alrededor del contenido */
+}
+
+.laureles-title {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: #ffffff; /* Color oro */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 10px #d4af37;
+    font-size: 2rem; /* Ajusta el tamaño del texto */
+    font-weight: bold; /* Resalta el texto */
+    text-align: center; /* Centra el texto */
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    margin-bottom: 20px; /* Espacio inferior */
+    line-height: 1.5; /* Espaciado entre líneas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+@media (max-width: 768px) {
+    .laureles-title {
+        font-size: 1.5rem; /* Reduce el tamaño del texto para pantallas medianas */
+    }
+}
+
+@media (max-width: 576px) {
+    .laureles-title {
+        font-size: 1.2rem; /* Reduce aún más el tamaño del texto para pantallas pequeñas */
+    }
+}
+
+.laureles-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas flexibles según el espacio disponible */
+    gap: 5px; /* Espaciado uniforme entre filas y columnas */
+    padding: 5px; /* Espaciado interno del contenedor */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Sombra para mayor profundidad */
+    justify-items: center; /* Centra los elementos horizontalmente */
+    align-items: center; /* Centra los elementos verticalmente */
+}
+
+@media (max-width: 768px) {
+    .laureles-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columnas flexibles según el espacio disponible */
+    }
+}
+
+@media (max-width: 576px) {
+    .laureles-container {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Columnas flexibles según el espacio disponible */
+    }
+}
+
+.laureles-container img {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    max-width: 250px; /* Tamaño máximo de las imágenes */
+    height: auto; /* Mantiene las proporciones */
+    object-fit: contain; /* Asegura que las imágenes no se deformen */
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar las imágenes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+}
+
+@media (max-width: 768px) {
+    .laureles-container img {
+        max-width: 200px; /* Reduce el tamaño máximo de las imágenes */
+    }
+}
+
+@media (max-width: 576px) {
+    .laureles-container img {
+        max-width: 120px; /* Reduce aún más el tamaño máximo de las imágenes */
+    }
+}
+
+.laureles-container img:hover {
+    transform: scale(1.5); /* Efecto de zoom al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.9); /* Sombra más pronunciada al pasar el cursor */
+    z-index: 1; /* Asegura que la imagen esté por encima de otras */
+}
+
+.laureles-dorados{
+    filter: drop-shadow(0 0 5px rgba(255, 217, 0, 0.418)); 
+}
+
+.laureles-item{
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.973)); /* Sombra blanca para destacar */
+}
+
+.laureles-oscuros{
+    background-color: #ffffff10;
+    border-radius: 10px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.959));
+}
+
+.laureles-oscuros:hover{
+    background-color: #ffffff20;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.959));
+    scale: 1.05; /* Efecto de zoom al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.9); /* Sombra más pronunciada al pasar el cursor */
+}
+
+.laureles-container p{
+    color: #ffffff; /* Color oro */
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5), 0 0 10px #d4af37;
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    font-weight: bold; /* Resalta el texto */
+    text-align: center; /* Centra el texto */
+    margin-bottom: 20px; /* Espacio inferior */
+    line-height: 1.5; /* Espaciado entre líneas */
+    letter-spacing: 1px; /* Espaciado entre letras */
+}
+
+.par-1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Divide en dos columnas iguales */
+    gap: 30px; /* Espaciado entre columnas */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 100px 10px 100px; /* Espacio alrededor del contenido */
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+    text-align: center; /* Alinea los títulos al centro */
+}
+
+.par-2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Divide en dos columnas iguales */
+    gap: 30px; /* Espaciado entre columnas */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 100px 10px 100px; /* Espacio alrededor del contenido */
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para dar profundidad */
+}
+
+.par-3 {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Divide en una columna */
+    gap: 30px; /* Espaciado entre filas */
+    align-items: center; /* Centra verticalmente el contenido */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    width: 100%;
+    padding: 20px 50px; /* Ajusta el padding para mayor espacio */
+    background: rgba(0, 0, 0, 0.2); /* Fondo más oscuro */
+    backdrop-filter: blur(20px); /* Aumenta el desenfoque */
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+    text-align: center; /* Centra el texto */
+    justify-items: center; /* Centra los elementos dentro de las celdas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+@media (max-width: 768px) {
+    .par-1, .par-2, .par-3 {
+        grid-template-columns: repeat(1, 1fr); /* Cambia a una sola columna */
+        padding: 15px; /* Reduce el padding */
+        gap: 20px; /* Ajusta el espaciado */
+    }
+
+    .par-1 h3, .par-2 h3, .par-3 h3 {
+        font-size: 1rem; /* Reduce el tamaño de los encabezados */
+    }
+
+    .par-1 p, .par-2 p, .par-3 p {
+        font-size: 0.9rem; /* Reduce el tamaño del texto */
+        line-height: 1.4; /* Ajusta el espaciado entre líneas */
+    }
+}
+
+@media (max-width: 576px) {
+    .par-1, .par-2, .par-3 {
+        padding: 10px; /* Reduce aún más el padding */
+        gap: 15px; /* Ajusta el espaciado */
+    }
+
+    .par-1 h3, .par-2 h3, .par-3 h3 {
+        font-size: 0.9rem; /* Reduce aún más el tamaño de los encabezados */
+    }
+
+    .par-1 p, .par-2 p, .par-3 p {
+        font-size: 0.8rem; /* Reduce aún más el tamaño del texto */
+        line-height: 1.3; /* Ajusta el espaciado entre líneas */
+    }
+}

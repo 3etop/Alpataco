@@ -1,0 +1,1038 @@
+@import url("https://fonts.googleapis.com/css2?family=poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+
+body {
+    background-image: black;
+    position: relative;
+    font-size: 16px; /* Tamaño base para accesibilidad */
+    color: #030303; /* Contraste mejorado */
+    line-height: 1.8; /* Mejora la legibilidad */
+    background-color: #121212; /* Fondo oscuro para mejor contraste */
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
+    height: 100vh; /* Ocupa todo el alto de la ventana */
+    margin: 0; /* Elimina márgenes */
+    overflow-y: auto; /* Habilita el scroll vertical */
+    overflow-x: hidden; /* Evita el scroll horizontal no deseado */
+    display: flex;
+    flex-direction: column; /* Asegura que el footer esté al final */
+    min-height: 100vh; /* Ocupa toda la altura de la ventana */
+}
+
+/*Header_______________________________________________________________________________*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3rem 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    font-size: 0.9rem;
+}
+
+.stacked-text {
+    color: #fff;
+    text-align: center; /* Centra el texto */
+    font-size: 1rem; /* Ajusta el tamaño del texto */
+    line-height: 1; /* Reduce el espacio entre las líneas */
+    font-weight: bold;
+}
+
+.stacked-text span {
+    display: block; /* Asegura que cada palabra esté en una línea separada */
+    color: inherit; /* Mantiene el color del texto padre */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
+}
+
+.stacked-text {
+    color: #fff; /* Color inicial */
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1;
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transición suave */
+}
+
+.stacked-text:hover {
+    transform: scale(1.1); /* Escalado más sutil para una transición suave */
+    color: rgb(36, 180, 180); /* Mantiene el color atractivo */
+    text-shadow: 0 2px 5px rgba(36, 180, 180, 0.5); /* Agrega un efecto de sombra para resaltar */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease, text-shadow 0.2s ease; /* Transición más fluida */
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .1);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+}
+
+.header::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent);
+    transition: .5s;
+}
+
+.header:hover::after {
+    left: 100%;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    display: flex;
+    height: 50px;
+    filter: drop-shadow(0 0 5px rgba(7, 0, 0, 0.973)); /* Sombra blanca para destacar */
+}
+
+.logo img {
+    width: auto;
+    max-width: 80px;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.973)); /* Sombra blanca para destacar */
+}
+
+.navbar a {
+    font-size: 1rem; /* Slightly larger for better readability */
+    color: #ffffff; /* Maintains good contrast */
+    text-decoration: none;
+    font-weight: 600; /* Slightly bolder for emphasis */
+    margin-left: 2rem; /* Adjusted spacing for better alignment */
+    transition: transform 0.1s ease, color 0.3s ease; /* Smooth transitions for hover effects */
+    display: inline-block; /* Ensures the element can be transformed */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Adds a shadow for better visibility */
+}
+
+
+
+.navbar a:hover {
+    transform: scale(1.1); /* Escalado más sutil para una transición suave */
+    color: rgb(36, 180, 180); /* Mantiene el color atractivo */
+    text-shadow: 0 2px 5px rgba(36, 180, 180, 0.5); /* Agrega un efecto de sombra para resaltar */
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease, text-shadow 0.2s ease; /* Transición más fluida */
+}
+
+#check {
+    display: none;
+}
+
+.icons {
+    position: absolute;
+    right: 5%;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 992px) {
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .icons {
+        display: inline-flex;
+    }
+
+    .logo img {
+        max-width: 120px; /* Aumenta el tamaño máximo del logo */
+        height: auto;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon {
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        z-index: -1;
+        overflow: hidden;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar {
+        height: 17.7rem;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar a {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
+
+    .logo img {
+        max-width: 100px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 992px){
+    .header {
+        padding: 1.3rem 5%;
+    }
+}
+
+@media (max-width: 768px){
+    .icons {
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon {
+        display: none;
+    }
+
+    .icons #close-icon{
+        display: none;
+    }
+
+    #check:checked~.icons #close-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(50px);
+        z-index: -1;
+        overflow: hidden;
+        transition: .3s ease;
+        
+    }
+
+    #check:checked~.navbar {
+        height: 17.7rem;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: .3s ease;
+    }
+
+    #check:checked~.navbar a {
+        transform: translateY(0);
+        opacity: 1;
+        transition-delay: calc(.15s * var(--i));
+    }
+
+    .logo img {
+        width: 100px; /* Tamaño fijo */
+        height: 100px; /* Tamaño fijo */
+        object-fit: contain; /* Mantener proporciones */
+    }
+
+    .logo {
+        position: static;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100px; /* Tamaño fijo */
+        height: 100px; /* Tamaño fijo */
+        overflow: hidden;
+    }
+
+    .home .content p {
+        font-size: 1.em; /* Aumentar aún más el tamaño de fuente */
+        color: #ffffff; /* Cambiar a blanco puro para mayor contraste */
+        line-height: 2; /* Incrementar el espaciado entre líneas */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada para mejor visibilidad */
+    }
+
+    .home .content h1 {
+        font-size: 2rem; /* Reduce el tamaño del texto */
+        text-align: center; /* Asegura que el texto esté centrado */
+    }
+
+    .home .content p {
+        font-size: 1rem; /* Reduce el tamaño del texto */
+        line-height: 1.4; /* Mejora la legibilidad */
+        margin-top: 10px; /* Ajusta el margen superior */
+    }
+
+    .home .content img {
+        width: 200px; /* Reduce el tamaño de la imagen */
+        height: auto; /* Mantiene las proporciones */
+        filter: drop-shadow(0 0 5px rgba(184, 15, 161, 0.973)); /* Sombra blanca para destacar */
+    }
+}
+
+@media (max-width: 576px) {
+    .home .content h1 {
+        font-size: 2rem; /* Ajusta aún más el tamaño del texto */
+    }
+
+    .home .content p {
+        font-size: 0.9rem; /* Reduce aún más el tamaño del texto */
+        line-height: 1.3; /* Ajusta la legibilidad */
+    }
+
+    .home .content img {
+        width: 150px; /* Reduce aún más el tamaño de la imagen */
+        filter: drop-shadow(0 0 5px rgba(184, 15, 161, 0.973)); /* Sombra blanca para destacar */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 80%; /* Reducir el ancho del contenedor */
+        margin: 10px auto; /* Centrar y ajustar margen */
+    }
+
+    .pie-pagina .grupo-1 {
+        gap: 10px; /* Reducir el espacio entre contenedores */
+    }
+
+    .logo img {
+        max-width: 140px; /* Aumenta aún más el tamaño del logo */
+        filter: drop-shadow(0 0 5px rgba(184, 15, 161, 0.973)); /* Sombra blanca para destacar */
+        height: auto;
+    }
+}
+
+
+
+/*end-Header______________________________________________________________________________*/
+h1 {
+    margin-bottom: 5px;
+    font-weight: 900;
+    font-size: 3em;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(0, 0, 1, 9.55);    
+}
+
+h3{
+    font-size: 2.5em;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(0, 0, 1, 9.55);    
+}
+/*body____________________________________________________________________________________*/
+
+.container {
+    position: relative; /* Confirmar si afecta otros elementos */
+    height: 100vh; /* Verificar si causa desbordamiento en pantallas pequeñas */
+    flex: 1; /* Permite que el contenido principal ocupe el espacio restante */
+}
+
+.container .video-container .background-image {
+    position: absolute; /* Asegura que se superponga correctamente */
+    top: 0; /* Alinea con el contenedor */
+    left: 0;
+    width: 100%; /* Ocupa todo el ancho */
+    height: 100%; /* Ocupa todo el alto */
+    object-fit: cover; /* Ajusta la imagen al contenedor sin deformarla */
+    object-position: center center; /* Centra la imagen horizontal y verticalmente */
+    z-index: -1; /* Coloca detrás del contenido */
+    opacity: 0; /* Comienza invisible */
+    transition: opacity var(--transition-duration, 0.5s) ease-in-out; /* Variable CSS para el tiempo de transición */
+    will-change: opacity; /* Mejora el rendimiento al indicar cambios */
+}
+
+.container .video-container .background-image.show {
+    opacity: 1; /* Se hace visible */
+}
+
+/*Banner*/
+.video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Revisar estilos del video */
+.video-container video,
+.video-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Confirmar si recorta contenido importante */
+    transform: translate(-50%, -50%); /* Verificar si está correctamente centrado */
+}
+
+img {
+    max-width: 100%; /* Asegura que la imagen no exceda el ancho del contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
+    display: block; /* Elimina espacios en línea alrededor de la imagen */
+    filter: drop-shadow(0 0 5px rgba(184, 15, 161, 0.973)); /* Sombra blanca para destacar */
+}
+
+.video-container img {
+    object-fit: cover; /* Ajusta la imagen para llenar el contenedor sin deformarse */
+    object-position: center right; /* Muestra la parte derecha de la imagen */
+}
+
+@media (max-width: 768px) {
+    .video-container img {
+        object-position: right; /* En pantallas pequeñas, enfoca más la parte derecha */
+    }
+}
+
+section{
+    padding: 10px 40px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.home .content {
+    position: relative;
+    color: #fff;
+    width: 85%;
+    margin-top: 10px; 
+    opacity: 0;
+    animation: entrada 3s 9s forwards; 
+    display: flex; /* Asegura que el contenido interno se muestre */
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+}
+
+.home .content.show {
+    opacity: 1; /* Se hace visible */
+    animation: entrada 3s forwards; /* Se anima la entrada */
+}
+
+@keyframes entrada {
+    0% {
+        opacity: 0;
+        transform: translateY(0px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hacer la imagen dentro de .home .content responsiva */
+.home .content img {
+    border-radius: 50%; /* Bordes redondeados para un diseño moderno */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.637)); /* Sombra blanca para destacar */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    width: 250px; /* Tamaño inicial */
+    height: auto; /* Mantiene proporciones */
+    transition: transform 0.3s ease; /* Transición suave para efectos */
+}
+
+.home .content img:hover {
+    transform: scale(1.05); /* Efecto de zoom sutil al pasar el cursor */
+}
+
+@media (max-width: 768px) {
+    .home .content img {
+        width: 200px; /* Reduce el tamaño en tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .home .content img {
+        width: 150px; /* Reduce aún más el tamaño en móviles */
+    }
+}
+
+span{
+    color: rgb(245, 184, 184);
+}
+
+.home .content p {
+    font-size: 0.8em;
+    font-weight: 600;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.5; /* Incrementa el espaciado entre líneas para mejor legibilidad */
+    margin-top: 20px;
+    max-width: 800px; /* Ancho máximo para el párrafo */
+    text-align: center; /* Centra el texto */
+    color: #ffffff; /* Asegura un color blanco puro */
+    display: inline-block; /* Ajusta el fondo al tamaño del texto */
+    padding: 10px 15px; /* Agrega un poco de espacio interno */
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+    background: rgba(0, 0, 0, 0.2); /* Fondo semitransparente para mejor contraste */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Sombra más pronunciada para mejor visibilidad */
+    transition: transform 0.3s ease, background 0.3s ease; /* Transiciones suaves */
+}
+
+.home .content p:hover {
+    transform: scale(1.05); /* Efecto de zoom sutil al pasar el cursor */
+    background: rgba(0, 0, 0, 0.7); /* Fondo más oscuro al pasar el cursor */
+}
+
+@media (max-width: 768px) {
+    .home .content p {
+        font-size: 1rem; /* Reduce el tamaño del texto */
+        line-height: 1.4; /* Mejora la legibilidad */
+    }
+}
+
+@media (max-width: 576px) {
+    .home .content p {
+        font-size: 0.9rem; /* Reduce aún más el tamaño del texto */
+        line-height: 1.3; /* Ajusta la legibilidad */
+    }
+}
+
+
+.home .content a{
+    background: #fff;
+    padding: 15px 35px;
+    color: #ac1643;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.home .media-icons {
+    z-index: 888;
+    position: absolute;
+    right: 5px;
+    display: flex;
+    flex-direction: column;
+    transition: 0.5s ease;
+}
+
+.home .media-icons a {
+    color: #ffffffc9;
+    font-size: 1.6em;
+    transition: 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1); /* Agrega sombras oscuras */
+}
+
+.home .media-icons a:not(:last-child){
+    margin-bottom: 20px;
+} 
+
+.home .media-icons a:hover{
+    transform: scale(1.8);
+    color: rgb(180, 36, 103);
+}
+
+@media (max-width: 1040px){
+    header{
+        padding: 12px 20px;
+    }
+
+    section{
+        padding: 100px 20px;
+    }
+
+    .home .media-icons{
+        right: 15px;
+    }
+
+    header .navigation{
+        position: relative;
+        display: none;
+    }
+}
+
+/*footer__________________________________________________________________________________*/
+
+.pie-pagina {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    padding: 30px 15px; /* Aumentar el padding para mayor espacio */
+    color: #fff;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
+    font-size: 1.1rem; /* Ajustar el tamaño del texto */
+    line-height: 1.6; /* Incrementar el espaciado entre líneas */
+    border-top: 2px solid rgba(255, 255, 255, 0.2); /* Agregar un borde superior */
+    color: rgba(255, 255, 255, 0.9); /* Mejorar el contraste */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Agregar sombra para destacar el texto */
+}
+
+.pie-pagina .grupo-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px;
+    gap: 30px; /* Incrementar el espacio entre los contenedores */
+}
+
+.grupo-1 .box-1 {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 150px; /* Reducir la altura */
+    gap: 15px;
+    padding: 15px; /* Reducir el padding interno */
+    border-radius: 10px;
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-right: 20px; /* Espaciado fijo a la derecha de box-2 */
+    transform: scale(1); /* Estado inicial */
+}
+
+.grupo-1 .box-1:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+}
+
+.grupo-1 .box-1 img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    width: 150px; /* Reducir el tamaño de la imagen */
+    height: auto; /* Mantiene proporciones */
+    object-fit: contain; /* Asegura que la imagen no se deforme */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.979)); /* Sombra blanca para destacar */
+
+}
+
+.grupo-1 .box-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    padding: 15px; /* Reducir el padding interno */
+    border-radius: 10px;
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1; /* Asegura que box-2 ocupe el espacio restante */
+    text-align: center; /* Centra el contenido de box-2 */
+}
+
+.grupo-1 .box-2 h2 {
+    font-size: 1.5rem; /* Reducir el tamaño del texto */
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing: 1px; /* Agregar espaciado entre letras */
+    font-weight: bold; /* Resaltar encabezados */
+}
+
+.grupo-1 .box-2 p {
+    font-size: 0.9rem; /* Reducir el tamaño del texto */
+    line-height: 1.6;
+    color: #dcdcdc;
+    max-width: 600px;
+    margin: 0 auto; /* Centra el párrafo */
+    text-align: center; /* Centra el texto */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
+    font-size: 1rem; /* Ajustar el tamaño del texto */
+    line-height: 1.8; /* Incrementar el espaciado entre líneas */
+    color: rgba(255, 255, 255, 0.85); /* Mejorar el contraste */
+    text-align: justify; /* Justificar el texto para un diseño más limpio */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra más sutil */
+}
+
+.grupo-1 .box-2 a:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+        .grupo-1 .box-2 h2 {
+            font-size: 1.5rem;
+        }
+
+        .grupo-1 .box-2 p {
+            font-size: 0.9rem;
+        }
+
+        .grupo-1 .box-2 a {
+            font-size: 0.9rem;
+        }
+}
+
+.grupo-1 .box-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 150px; /* Reducir la altura */
+    gap: 15px;
+    padding: 15px; /* Reducir el padding interno */
+    border-radius: 10px;
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 30px; /* Espaciado fijo a la izquierda de box-2 */
+    transform: scale(1); /* Estado inicial */
+}
+
+.grupo-1 .box-3:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+}
+
+.grupo-1 .box-3 h2 {
+    font-size: 1.5rem; /* Reducir el tamaño del texto */
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
+}
+
+.grupo-1 .box-3 a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px; /* Reducir el tamaño de los íconos */
+    height: 30px;
+    gap: 20px;
+    background: linear-gradient(to right, #034943, #0c6b72);
+    color: #fff;
+    font-size: 1rem; /* Reducir el tamaño del texto de los íconos */
+    border-radius: 50%; /* Hacer los íconos circulares */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.grupo-1 .box-3 a:hover {
+    transform: scale(1.2); /* Efecto de agrandamiento */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(to right, #15686e, #064b20); /* Cambiar gradiente al pasar el cursor */
+}
+
+.pie-pagina .grupo-2 {
+    font-size: 1.1rem; /* Aumentar ligeramente el tamaño del texto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 15px; /* Reducir el padding interno */
+    border-radius: 10px;
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: rgba(255, 255, 255, 0.9); /* Mejorar el contraste */
+}
+
+.grupo-2{
+    width: 100%;
+}
+
+.grupo-2 .pdf{
+    button {
+        background: linear-gradient(to right, #011312, #084440, #051d1d);
+        color: #fff;
+        font-size: 1rem; /* Aumentar el tamaño del texto */
+        font-weight: 600;
+        padding: 10px 20px; /* Ajustar el tamaño del botón */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+        transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+        background: linear-gradient(to right, #011312, #084440, #051d1d); /* Cambiar gradiente */
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        background: linear-gradient(to right, #15686e, #064b20); /* Cambiar gradiente al pasar el cursor */
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    button:active {
+        transform: scale(0.95);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.grupo-3 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+    padding: 15px; /* Reducir el padding interno */
+    border-radius: 10px;
+    background: linear-gradient(to right, #011312, #084440, #051d1d);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.grupo-3 .credito{
+    font-size: 1rem; /* Ajustar el tamaño del texto */
+    color: rgba(255, 255, 255, 0.8); /* Mejorar el contraste */
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra más sutil */
+    font-size: 1rem; /* Ajustar el tamaño del texto */
+    line-height: 1.8; /* Incrementar el espaciado entre líneas */
+    color: rgba(255, 255, 255, 0.85); /* Mejorar el contraste */
+    text-align: justify; /* Justificar el texto para un diseño más limpio */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra más sutil */
+    text-transform: uppercase; /* Convertir texto a mayúsculas */
+    letter-spacing: 1px; /* Agregar espaciado entre letras */
+    font-weight: bold; /* Resaltar encabezados */
+}
+
+@media (max-width: 768px) {
+    .pie-pagina {
+        padding: 20px 10px; /* Reducir el padding */
+        font-size: 0.9rem; /* Reducir el tamaño de fuente */
+        gap: 15px; /* Reducir el espacio entre elementos */
+    }
+
+    .pie-pagina .grupo-1 {
+        flex-direction: column; /* Apilar los contenedores verticalmente */
+        align-items: center; /* Centrar los contenedores */
+        gap: 20px; /* Espaciado uniforme entre contenedores */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 100%; /* Asegurar que todos los contenedores tengan el mismo ancho */
+        margin: 0 auto; /* Centrar los contenedores */
+    }
+
+    .pie-pagina .grupo-2,
+    .pie-pagina .grupo-3 {
+        width: 100%; /* Asegurar que ocupen todo el ancho disponible */
+        text-align: center; /* Centrar el contenido */
+        padding: 10px; /* Reducir el padding */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 90%; /* Ajustar el ancho de los contenedores */
+        margin: 0 auto; /* Centrar los contenedores */
+    }
+
+    .pie-pagina .grupo-2 {
+        text-align: center; /* Centrar el texto */
+        padding: 10px; /* Reducir el padding */
+        font-size: 0.9rem; /* Reducir el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-3 {
+        text-align: center; /* Centrar el texto */
+        padding: 10px; /* Reducir el padding */
+        font-size: 0.9rem; /* Reducir el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.8rem; /* Ajustar el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-1 {
+        flex-direction: column; /* Apilar los contenedores verticalmente */
+        align-items: center; /* Centrar los contenedores */
+        gap: 20px; /* Espaciado entre contenedores */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 90%; /* Ajustar el ancho de los contenedores */
+        margin: 0 auto; /* Centrar los contenedores */
+    }
+
+    .pie-pagina .grupo-2 {
+        text-align: center; /* Centrar el texto */
+        padding: 10px; /* Reducir el padding */
+    }
+
+    .pie-pagina .grupo-3 {
+        text-align: center; /* Centrar el texto */
+        padding: 10px; /* Reducir el padding */
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.8rem; /* Ajustar el tamaño del texto */
+    }
+}
+
+@media (max-width: 576px) {
+    .pie-pagina {
+        padding: 15px 5px; /* Reducir aún más el padding */
+        font-size: 0.8rem; /* Reducir el tamaño de fuente */
+        gap: 10px; /* Reducir el espacio entre elementos */
+    }
+
+    .pie-pagina .grupo-1 {
+        gap: 15px; /* Reducir el espacio entre contenedores */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 100%; /* Mantener el ancho uniforme */
+    }
+
+    .pie-pagina .grupo-2,
+    .pie-pagina .grupo-3 {
+        width: 100%; /* Mantener el ancho uniforme */
+        padding: 5px; /* Reducir aún más el padding */
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.7rem; /* Reducir el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 100%; /* Usar todo el ancho disponible */
+    }
+
+    .pie-pagina .grupo-1 .box img {
+        width: 100px; /* Reducir el tamaño de las imágenes */
+        height: auto; /* Mantener proporciones */
+    }
+
+    .pie-pagina .grupo-1 .box h2 {
+        font-size: 1.1rem; /* Reducir el tamaño de los encabezados */
+    }
+
+    .pie-pagina .grupo-1 .box p {
+        font-size: 0.7rem; /* Reducir el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-1 .box a {
+        width: 20px; /* Reducir el tamaño de los íconos */
+        height: 20px;
+        font-size: 0.8rem; /* Reducir el tamaño del texto de los íconos */
+    }
+
+    .pie-pagina .grupo-2 {
+        font-size: 0.8rem; /* Reducir el tamaño del texto */
+        padding: 5px 10px; /* Reducir el padding */
+    }
+
+    .pie-pagina .grupo-2 button {
+        font-size: 0.7rem; /* Reducir el tamaño del texto del botón */
+        padding: 5px 10px; /* Reducir el tamaño del botón */
+    }
+
+    .pie-pagina .grupo-3 {
+        font-size: 0.8rem; /* Reducir el tamaño del texto */
+        padding: 5px 10px; /* Reducir el padding */
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.7rem; /* Reducir aún más el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-1 {
+        gap: 15px; /* Reducir el espacio entre contenedores */
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 100%; /* Usar todo el ancho disponible */
+    }
+
+    .pie-pagina .grupo-2 button {
+        font-size: 0.7rem; /* Reducir el tamaño del texto del botón */
+        padding: 5px 10px; /* Reducir el tamaño del botón */
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.7rem; /* Reducir aún más el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-1 .box-1 img,
+    .pie-pagina .grupo-1 .box-2 img,
+    .pie-pagina .grupo-1 .box-3 img {
+        width: 100px; /* Reducir aún más el tamaño de las imágenes */
+    }
+
+    .pie-pagina .grupo-1 .box-2 h2,
+    .pie-pagina .grupo-1 .box-3 h2 {
+        font-size: 1.1rem; /* Reducir aún más el tamaño de los encabezados */
+    }
+
+    .pie-pagina .grupo-1 .box-2 p {
+        font-size: 0.7rem; /* Reducir aún más el tamaño del texto */
+    }
+
+    .pie-pagina .grupo-1 .box-3 a {
+        width: 20px; /* Reducir aún más el tamaño de los íconos */
+        height: 20px;
+        font-size: 0.8rem; /* Reducir aún más el tamaño del texto de los íconos */
+    }
+
+    .pie-pagina .grupo-2 button {
+        font-size: 0.7rem; /* Reducir aún más el tamaño del texto del botón */
+        padding: 5px 10px; /* Reducir aún más el tamaño del botón */
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.7rem; /* Reducir aún más el tamaño del texto */
+    }
+}

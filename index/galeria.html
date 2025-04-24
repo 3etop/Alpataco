@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <script src="inicio.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../Normalize/normalize.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="../styles/galeria.css">
+        <link rel="icon" type="image/png" href="../image/Favicon icon/Alpataco-Favicon-2_png.ico" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="../image/Favicon icon/favicon.svg films/image/Favicon icon/favicon.svg"/>
+        <link rel="shortcut icon" href="../image/Favicon icon/Alpataco-Favicon-2_png.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../Alpataco films/image/Favicon icon/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+        <link rel="manifest" href="../image/Favicon icon/web-app-manifest-512x512.png" />
+        <title>Alpataco films</title>
+    </head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="../image/imagenes/alpataco logo.png" alt="Logo Alpataco" loading="lazy">
+        </div>
+        <input type="checkbox" id="check" aria-label="Toggle navigation menu">
+        <label for="check" class="icons">
+            <i class="bi bi-list" id="menu-icon"></i>
+            <i class="bi bi-x-lg" id="close-icon"></i>
+        </label>
+        <nav class="navbar">
+            <a href="../index.html" style="--i:0">
+                <div class="stacked-text">
+                    <span>Inicio</span>
+                    <span></span>
+                </div>
+            </a>
+            <a href="Reconocimiento.html" style="--i:1">
+                <div class="stacked-text">
+                    <span>Reconocimientos</span>
+                    <span></span>
+                </div>
+            </a>
+            <a href="peliculas.html" style="--i:2">Peliculas</a>
+            <a href="galeria.html" style="--i:3">Galería</a>
+            <a href="videos.html">Prensa</a>
+            <a href="contacto.html" style="--i:4">Contacto</a>
+        </nav>
+    </header>
+    <main>
+        <div class="vacio"></div>
+        <div class="director">
+            <h4>Director</h4>
+            <div class="profile-image-container">
+                <img src="../image/nuevo contenido/director mauro mauad.webp" alt="Director" class="profile-image" loading="lazy">
+                <h5>Mauro Mauad</h5>
+                <div class="profile-buttons">
+                    <button id="openDirectorModal" class="boton-perfil">Ver Perfil</button>
+                    <a href="https://www.instagram.com/mauromauad/" target="_blank" class="boton-insta">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="modalDirector" class="modal">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h2>Mauro Mauad</h2>
+                <h3>Compositor, musico, actor, productor, guionista, fundador, director y Ceo en Alpataco Films.</h3>
+                <div class="texto-1">
+                    <p>Mauro Mauad, nació en Argentina el 31 de octubre de 1972. Es historiador de profesión e inició su carrera actoral en México en el año 2004...</p>
+                    <img src="../image/images galeria/24.jpg" alt="director" loading="lazy">
+                </div>
+                <div class="texto-2">
+                    <p>En el año 2020 tras escribir varios guiones decide fundar su productora Alpataco Films radicada en Colombia. Debutó como director con el largometraje No quiero estar sin ti (2020) que fue rodada en pandemia, y ha sido premiada en varios festivales internacionales como Barcelona Indie Filmmakers Festival - BARCIFF en el que recibió el premio a Mejor Película y en el Milano International Film Festival Awards, a Mejor Guión. Continuó su trayectoria en la dirección con Una llave hacia el pasado, rodada en el 2023 en Ciudad Juárez, México; que ha recibido el premio a Mejor Película en el Stafford Film Festival.<br><br>En marzo de 2024 estrena Sin clemencia, una película de ficción rodada en los llanos orientales colombianos, que recibió en el Festival Internacional de Cine de Pasto FICPA y el New York Movie Awards el premio a Mejor Película de ficción. </p>
+                    <img src="../image/images galeria/14.jpeg" alt="" loading="lazy">
+                </div>
+                <div class="texto-3">
+                    <p>Dentro de sus logros actorales participó en una variedad de producciones, incluyendo La Novicia Rebelde en el Teatro Insurgentes, donde obtuvo el Premio.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div class="galeria-imagenes-box">
+        <h4>Galería</h4>
+        <div class="galeria-imagenes">
+            <div class="imagen">
+                <img src="../image/images galeria/1_23_11zon.webp" alt="Imagen 1" loading="lazy">
+                <h3>Alpataco Films #1</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/2_24_11zon.jpeg" alt="Imagen 2" loading="lazy">
+                <h3>Alpataco Films #2</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/3_25_11zon.webp" alt="Imagen 3" loading="lazy">
+                <h3>Alpataco Films #3</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/4_26_11zon.webp" alt="Imagen 4" loading="lazy">
+                <h3>Alpataco Films #4</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/5_27_11zon.webp" alt="Imagen 5" loading="lazy">
+                <h3>Alpataco Films #5</h3>   
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/6_28_11zon.webp" alt="Imagen 6" loading="lazy">
+                <h3>Alpataco Films #6</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/7_29_11zon.webp" alt="Imagen 7" loading="lazy">
+                <h3>Alpataco Films #7</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/8_30_11zon.webp" alt="Imagen 8" loading="lazy">
+                <h3>Alpataco Films #8</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/9_31_11zon.webp" alt="Imagen 9" loading="lazy">
+                <h3>Alpataco Films #9</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/10_32_11zon.webp" alt="Imagen 10" loading="lazy">
+                <h3>Alpataco Films #10</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/11_33_11zon.webp" alt="Imagen 11" loading="lazy">
+                <h3>Alpataco Films #11</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/12_34_11zon.webp" alt="Imagen 12" loading="lazy">
+                <h3>Alpataco Films #12</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/13_35_11zon.webp" alt="Imagen 13" loading="lazy">
+                <h3>Alpataco Films #13</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/14_36_11zon.webp" alt="Imagen 14" loading="lazy">
+                <h3>Alpataco Films #14</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/15_37_11zon.webp" alt="Imagen 15" loading="lazy">
+                <h3>Alpataco Films #15</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/16_38_11zon.webp" alt="Imagen 16" loading="lazy">
+                <h3>Alpataco Films #16</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/17_39_11zon.webp" alt="Imagen 17" loading="lazy">
+                <h3>Alpataco Films #17</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/18_40_11zon.webp" alt="Imagen 18" loading="lazy">
+                <h3>Alpataco Films #18</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/19_41_11zon.webp" alt="Imagen 19" loading="lazy">
+                <h3>Alpataco Films #19</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/20_42_11zon.webp" alt="Imagen 20" loading="lazy">
+                <h3>Alpataco Films #20</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/21_43_11zon.webp" alt="Imagen 21" loading="lazy">
+                <h3>Alpataco Films #21</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/22_44_11zon.webp" alt="Imagen 22" loading="lazy">
+                <h3>Alpataco Films #22</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/23_45_11zon.webp" alt="Imagen 23" loading="lazy">
+                <h3>Alpataco Films #23</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/24_46_11zon.webp" alt="Imagen 24" loading="lazy">
+                <h3>Alpataco Films #24</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/25_47_11zon.webp" alt="Imagen 25" loading="lazy">
+                <h3>Alpataco Films #25</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/26_48_11zon.webp" alt="Imagen 26" loading="lazy">
+                <h3>Alpataco Films #26</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/27_49_11zon.webp" alt="Imagen 27" loading="lazy">
+                <h3>Alpataco Films #27</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/28_50_11zon.webp" alt="Imagen 28" loading="lazy">
+                <h3>Alpataco Films #28</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/29_51_11zon.webp" alt="Imagen 29" loading="lazy">
+                <h3>Alpataco Films #29</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/30_52_11zon.webp" alt="Imagen 30" loading="lazy">
+                <h3>Alpataco Films #30</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/31_53_11zon.webp" alt="Imagen 31" loading="lazy">
+                <h3>Alpataco Films #31</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/32_54_11zon.webp" alt="Imagen 32" loading="lazy">
+                <h3>Alpataco Films #32</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/33_55_11zon.webp" alt="Imagen 33" loading="lazy">
+                <h3>Alpataco Films #33</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/34_56_11zon.webp" alt="Imagen 34" loading="lazy">
+                <h3>Alpataco Films #34</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/35_57_11zon.webp" alt="Imagen 35" loading="lazy">
+                <h3>Alpataco Films #35</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/36_1_11zon.webp" alt="Imagen 36" loading="lazy">
+                <h3>Alpataco Films #36</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/37_2_11zon.webp" alt="Imagen 37" loading="lazy">
+                <h3>Alpataco Films #37</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/38_3_11zon.webp" alt="Imagen 38" loading="lazy">
+                <h3>Alpataco Films #38</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/39_4_11zon.webp" alt="Imagen 39" loading="lazy">
+                <h3>Alpataco Films #39</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/40_5_11zon.webp" alt="Imagen 40" loading="lazy">
+                <h3>Alpataco Films #40</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/41_6_11zon.webp" alt="Imagen 41" loading="lazy">
+                <h3>Alpataco Films #41</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/42_7_11zon.webp" alt="Imagen 42" loading="lazy">
+                <h3>Alpataco Films #42</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/43_8_11zon.webp" alt="Imagen 43" loading="lazy">
+                <h3>Alpataco Films #43</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/44_9_11zon.webp" alt="Imagen 44" loading="lazy">
+                <h3>Alpataco Films #44</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/45_10_11zon.webp" alt="Imagen 45" loading="lazy">
+                <h3>Alpataco Films #45</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/46_11_11zon.webp" alt="Imagen 46" loading="lazy">
+                <h3>Alpataco Films #46</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/47_12_11zon.webp" alt="Imagen 47" loading="lazy">
+                <h3>Alpataco Films #47</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/48_13_11zon.webp" alt="Imagen 48" loading="lazy">
+                <h3>Alpataco Films #48</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/49_14_11zon.webp" alt="Imagen 49" loading="lazy">
+                <h3>Alpataco Films #49</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/50_15_11zon.webp" alt="Imagen 50" loading="lazy">
+                <h3>Alpataco Films #50</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/51_16_11zon.webp" alt="Imagen 51" loading="lazy">
+                <h3>Alpataco Films #51</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/52_17_11zon.webp" alt="Imagen 52" loading="lazy">
+                <h3>Alpataco Films #52</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/53_18_11zon.webp" alt="Imagen 53" loading="lazy">
+                <h3>Alpataco Films #53</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/54_19_11zon.webp" alt="Imagen 54" loading="lazy"> <!-- Verificar si esta imagen existe -->
+                <h3>Alpataco Films #54</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/55_20_11zon.webp" alt="Imagen 55" loading="lazy"> <!-- Verificar si esta imagen existe -->
+                <h3>Alpataco Films #55</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/56_21_11zon.webp" alt="Imagen 56" loading="lazy"> <!-- Verificar si esta imagen existe -->
+                <h3>Alpataco Films #56</h3>
+            </div>
+            <div class="imagen">
+                <img src="../image/images galeria/57_22_11zon.webp" alt="Imagen 57" loading="lazy"> <!-- Verificar si esta imagen existe -->
+                <h3>Alpataco Films #57</h3>
+            </div>
+        </div>
+    </div>
+    <div id="imageModal" class="modal">
+        <button class="modal-arrow left" id="prevButton"><i class="bi bi-arrow-left-square-fill"></i></button>
+        <img id="modalImage" src="" alt="Imagen del modal">
+        <div id="modalText"></div> <!-- Contenedor para el texto -->
+        <button class="modal-arrow right" id="nextButton"><i class="bi bi-arrow-right-square-fill"></i></button>
+        <button class="close-button"><i class="bi bi-x-circle-fill"></i></button>
+    </div>
+    <footer class="pie-pagina">
+        <div class="grupo-1">
+            <div class="box-1">
+                <figure>
+                    <a href="#">
+                        <img src="../image/imagenes/alpataco logo.png" alt="logo-alpataco" loading="lazy">
+                    </a>
+                </figure>
+            </div>  
+            <div class="box-2">
+                <h2>
+                    Mision
+                </h2>
+                <!--<p>SOMOS NARRADORES VISUALES CON MÁS DE 5 AÑOS DE TRAYECTORIA
+                    Hemos sido galardonados en diferentes certámenes publicitarios como... , entre otros.</p>-->
+                <p>Nuestra misión es crear piezas cinematográficas memorables.</p>
+                <p>Desarrollamos producciones audiovisuales que inspiren y aporten valores, fomentando un movimiento artístico profundo y constructivo. </p>
+            </div>
+            <div class="box-3">
+                <h2>SIGUENOS</h2>
+                <div class="div red-social">
+                    <a href="https://www.facebook.com/profile.php?id=61556811579022"target="_blank" class="bi bi-facebook"></a>
+                    <a href="https://www.instagram.com/alpataco.films/"target="_blank" class="bi bi-instagram"></a>
+                    <a href="https://www.youtube.com/@Alpatacofilms"target="_blank" class="bi bi-youtube"></a>
+                    <a href="https://www.threads.net/@alpataco.films"target="_blank" class="bi bi-threads"></a>
+                    <a href="https://www.tiktok.com/@alpataco.films"target="_blank" class="bi bi-tiktok"></a>
+                    <a href="https://vimeo.com/alpatacofilms"target="_blank" class="bi bi-vimeo"></a>
+                    <a href="https://api.whatsapp.com/send?phone=3155315725&text=Hola soy... y quiero escribirles acerca de..." target="_blank" class="bi bi-whatsapp"></a>
+                </div>
+            </div>
+        </div>
+        <div class="grupo-2">
+            <div class="pdf">
+                <button onclick="location.href='../document/Politica_Proteccion_Datos_Alpataco_Films_SAS.pdf';"> <i class="bi bi-caret-right-fill"> Politica de tratamiento de datos Alpataco films S.A.S PDF </i></button>
+            </div>
+        </div>
+        <div class="grupo-3">
+            <div class="credito">
+                <small>&copy; 2025 <b> Betto R. / Pilar C.</b> - Todos los Derechos Reservados - ALPATACO FILMS S.A.S.</small>
+            </div>
+        </div>
+    </div>
+    </footer>
+    <script src="../scripts/galeria.js"></script>
+</body>
+</html>
