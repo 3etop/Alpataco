@@ -87,6 +87,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("banner-audio");
+
+    // Verificar si es la primera visita usando localStorage
+    if (!localStorage.getItem("audioPlayed")) {
+        // Reproducir el audio
+        audio.play().catch((error) => {
+            console.log("El navegador bloqueó la reproducción automática:", error);
+        });
+
+        // Marcar que el audio ya se reprodujo
+        localStorage.setItem("audioPlayed", "true");
+    }
+});
+
 
 
 
