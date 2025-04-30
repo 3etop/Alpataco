@@ -3,50 +3,72 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-title" content="MyWebSite">
+        
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" href="../image/Favicon icon/Alpataco-Favicon-2_png.ico" sizes="96x96">
+        <link rel="icon" type="image/svg+xml" href="../image/Favicon icon/favicon.svg">
+        <link rel="shortcut icon" href="../image/Favicon icon/Alpataco-Favicon-2_png.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="../image/Favicon icon/apple-touch-icon.png">
+        <link rel="manifest" href="../image/Favicon icon/web-app-manifest-512x512.png">
+
+        <!-- Preloads -->
+        <link rel="preload" href="../image/imagenes/alpataco logo.png" as="image">
+        <link rel="preload" href="../styles/peliculas.css" as="style">
+
+        <!-- Stylesheets -->
         <link rel="stylesheet" href="../Normalize/normalize.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="../styles/peliculas.css">
-        <link rel="icon" type="image/png" href="../image/Favicon icon/Alpataco-Favicon-2_png.ico" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="../image/Favicon icon/favicon.svg films/image/Favicon icon/favicon.svg"/>
-        <link rel="shortcut icon" href="../image/Favicon icon/Alpataco-Favicon-2_png.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="../Alpataco films/image/Favicon icon/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-        <link rel="manifest" href="../image/Favicon icon/web-app-manifest-512x512.png" />
-        <link rel="preload" href="../image/imagenes/alpataco logo.png" as="image"> <!-- Preload del logo -->
-        <link rel="preload" href="../styles/peliculas.css" as="style"> <!-- Preload del CSS -->
-        <title>Alpataco films</title>
+
+        <!-- Title -->
+        <title>Alpataco Films</title>
     </head>
 <body>
     <section class="container">
         <header class="header">
             <div class="logo">
-                <img src="../image/imagenes/alpataco logo.png" alt="Logo de Alpataco" loading="lazy">
+                <img src="../image/imagenes/alpataco logo.png" alt="Logo Alpataco" loading="lazy">
             </div>
-            <input type="checkbox" id="check">
+            <input type="checkbox" id="check" aria-label="Toggle navigation menu">
             <label for="check" class="icons">
                 <i class="bi bi-list" id="menu-icon"></i>
                 <i class="bi bi-x-lg" id="close-icon"></i>
             </label>
             <nav class="navbar">
-                <a href="../index.html" style="--i:0">Inicio</a>
-                <a href="../index/Reconocimiento.html" style="--i:1">Reconocimientos</a>
-                <a href="../index/peliculas.html" style="--i:2">Peliculas</a>
-                <a href="../index/galeria.html" style="--i:3">Galería</a>
+                <!--<a href="../index.html" style="--i:0">
+                    <div class="stacked-text">
+                        <span>Inicio</span>
+                        <span></span>
+                    </div>
+                </a>-->
+                <!--<a href="Reconocimiento.html" style="--i:1">
+                    <div class="stacked-text">
+                        <span>Reconocimientos</span>
+                        <span></span>
+                    </div>
+                </a>-->
+                <a href="../index.html" style="--i:0">Inicío</a>
+                <a href="Reconocimiento.html" style="--i:1">Reconocimientos</a>
+                <a href="peliculas.html" style="--i:2">Películas</a>
+                <a href="galeria.html" style="--i:3">Galería</a>
                 <a href="videos.html">Prensa</a>
-                <a href="../index/contacto.html" style="--i:4">Contacto</a>
+                <a href="contacto.html" style="--i:4">Contacto</a>
             </nav>
         </header>
     </section>
-
     <!-- Slider -->
     <div class="slider">
         <div class="list">
             <!-- No Quiero Estar Sin Ti -->
-            <div class="item active">
-                <img src="../image/nuevo contenido/Banner Horizontal No quiero estar sin ti.webp" alt="Banner de No quiero estar sin ti" loading="lazy" decoding="async">
+            <div class="item 1 active">
+                <img src="../image/nuevo contenido/Banner Horizontal No quiero estar sin ti.webp" alt="Banner de No quiero estar sin ti" loading="lazy" decoding="async" class="desktop-img">
+                <img src="../image/750px/no quiero estar sin ti.png" alt="Banner móvil de No quiero estar sin ti" loading="lazy" class="mobile-img">
                 <div class="content" style="transform: scale(0.9); transform-origin: top center;">
                     <div class="vacio"></div>
-                    <img src="../image/nuevo contenido/titulo nuevo no quiero estar sin ti_11zon.webp" class="movie-title" loading="lazy" style="background-color: #ffffff48;">
+                    <picture>
+                        <img src="../image/nuevo contenido/titulo nuevo no quiero estar sin ti_11zon.webp" class="movie-title" loading="lazy" style="background-color: #ffffff48;">
+                    </picture>
                     <h4>
                         <span>2020 </span><span><i style="background-color: orange;"> 18+ </i></span><span> 1h 31min </span><span style="color: orange;"> Drama-Erótico. </span>
                     </h4>
@@ -70,7 +92,7 @@
                 </div>
             </div>
             <!-- Sin Clemencia -->
-            <div class="item">
+            <div class="item 2">
                 <img src="../image/nuevo contenido/Banner Horizontal Sin clemencia.webp" alt="Banner de Sin Clemencia" loading="lazy">
                 <div class="content" style="transform: scale(0.9); transform-origin: top center;">
                     <div class="vacio"></div>
@@ -102,7 +124,7 @@
                 </div>
             </div>
             <!-- Una LLave hacia el pasado -->
-            <div class="item">
+            <div class="item 3">
                 <img src="../image/nuevo contenido/Banner Horizontal una llave hacia el pasado.webp" alt="Banner de Una llave hacia el pasado" loading="lazy">
                 <div class="content" style="transform: scale(0.9); transform-origin: top center;">
                     <div class="vacio"></div>
@@ -130,13 +152,13 @@
                 </div>
             </div>
             <!-- Un Amor Inevitable -->
-            <div class="item">
+            <div class="item 4">
                 <img src="../image/nuevo contenido/Banner Horizontal Un amor inevitable.webp" alt="Banner de Un amor inevitable" loading="lazy">
                 <div class="content" style="transform: scale(0.9); transform-origin: top center;">
                     <div class="vacio"></div>
                     <img src="../image/nuevo contenido/titulo 1 un amor inevitable.png" alt="Título de Un amor inevitable" class="movie-title" loading="lazy" style="background-color: #ffffff2d;">
                     <h4>
-                        <span>2025 </span><span><i  style="background-color: orange;"> 14+ </i></span><span> 1h 14min </span><span style="color: orange;"> Ficción - Drama </span>
+                        <span>2025 </span><span><i  style="background-color: orange;"> 15+ </i></span><span> 1h 14min </span><span style="color: orange;"> Ficción - Drama </span>
                     </h4>
                     <p style="font-size: 0.85rem; line-height: 1.5;">
                         Nano Blanco, un músico en la cima de su carrera, ve su mundo tambalear cuando Luna, un amor fugaz del pasado, reaparece embarazada y sin un lugar donde ir. Entre giras, contratos y su miedo al compromiso, Nano deberá decidir si el destino le ofrece una segunda oportunidad o una última lección.
@@ -158,7 +180,7 @@
                 </div>
             </div>
             <!-- ENA y el niño que vino del río -->
-            <div class="item">
+            <div class="item 5">
                 <img src="../image/nuevo contenido/Banner Horizontal Ena1.webp" alt="Banner de ENA y el niño que vino del río" loading="lazy">
                 <div class="content" style="transform: scale(0.9); transform-origin: top center;">
                     <div class="vacio"></div>
@@ -186,7 +208,7 @@
                 </div>
             </div>
             <!-- Aislados -->
-            <div class="item">
+            <div class="item 6">
                 <img src="../image/nuevo contenido/Baner horizontal aislados(1).webp" alt="Banner de Aislados" loading="lazy">
                 <div class="content" style="transform: scale(0.9); transform-origin: top center;">
                     <div class="vacio"></div>

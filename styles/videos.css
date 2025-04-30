@@ -53,38 +53,8 @@ footer {
     align-items: center;
     z-index: 100;
     font-size: 0.9rem;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
-    background: linear-gradient(to right, #0113127e, #0b0a5362, #051d1d);
-}
-
-.stacked-text {
-    color: #fff;
-    text-align: center; /* Centra el texto */
-    font-size: 1rem; /* Ajusta el tamaño del texto */
-    line-height: 1; /* Reduce el espacio entre las líneas */
-    font-weight: bold;
-}
-
-.stacked-text span {
-    display: block; /* Asegura que cada palabra esté en una línea separada */
-    color: inherit; /* Mantiene el color del texto padre */
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
-}
-
-.stacked-text {
-    color: #fff; /* Color inicial */
-    text-align: center;
-    font-size: 1rem;
-    line-height: 1;
-    font-weight: bold;
-    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transición suave */
-}
-
-.stacked-text:hover {
-    transform: scale(1.1); /* Escalado más sutil para una transición suave */
-    color: rgb(36, 180, 180); /* Mantiene el color atractivo */
-    text-shadow: 0 2px 5px rgba(36, 180, 180, 0.5); /* Agrega un efecto de sombra para resaltar */
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease, text-shadow 0.2s ease; /* Transición más fluida */
+    min-height: 50px; /* Establece una altura mínima */
+    max-height: 70px; /* Establece una altura máxima */
 }
 
 .header::before {
@@ -121,7 +91,7 @@ footer {
     font-weight: 700;
     display: flex;
     height: 50px;
-    filter: drop-shadow(0 0 5px rgba(7, 0, 0, 0.973)); /* Sombra blanca para destacar */
+    filter: drop-shadow(0 0 5px rgba(7, 0, 0, 0.973));
 }
 
 .logo img {
@@ -131,25 +101,47 @@ footer {
     object-fit: contain;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0 0 5px rgba(7, 0, 0, 0.973)); /* Sombra blanca para destacar */
+    filter: drop-shadow(0 0 5px rgba(30, 255, 0, 0.973));
 }
 
 .navbar a {
-    font-size: 1rem; /* Slightly larger for better readability */
-    color: #ffffff; /* Maintains good contrast */
+    font-size: 0.8rem;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: 600; /* Slightly bolder for emphasis */
-    margin-left: 2rem; /* Adjusted spacing for better alignment */
-    transition: transform 0.1s ease, color 0.3s ease; /* Smooth transitions for hover effects */
-    display: inline-block; /* Ensures the element can be transformed */
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Adds a shadow for better visibility */
+    font-weight: 600;
+    margin-left: 2rem;
+    transition: transform 0.1s ease, color 0.3s ease;
+    display: inline-block;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .navbar a:hover {
-    transform: scale(1.1); /* Escalado más sutil para una transición suave */
-    color: rgb(36, 180, 180); /* Mantiene el color atractivo */
-    text-shadow: 0 2px 5px rgba(36, 180, 180, 0.5); /* Agrega un efecto de sombra para resaltar */
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), color 0.4s ease, text-shadow 0.2s ease; /* Transición más fluida */
+    transform: scale(1.15); /* Incrementa ligeramente el efecto de agrandamiento */
+    color: rgb(9, 255, 0); /* Mantiene el color al pasar el cursor */
+    text-shadow: 0 4px 8px rgba(0, 255, 0, 0.7); /* Aumenta la intensidad de la sombra */
+    transition: transform 0.3s ease-in-out, color 0.3s ease, text-shadow 0.3s ease; /* Transiciones más rápidas y suaves */
+    position: relative;
+}
+
+.navbar a:hover::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(51, 255, 0);
+    transition: width 0.4s ease, background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: rgb(0, 255, 42); /* Mantiene el color al pasar el cursor */
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.7); /* Aumenta la intensidad de la sombra */
+}
+
+.navbar a:hover::after {
+    width: 100%; /* Anima la línea subrayada */
+    background-color: rgb(21, 255, 0); /* Cambia el color de la línea al pasar el cursor */
 }
 
 #check {
@@ -159,26 +151,28 @@ footer {
 .icons {
     position: absolute;
     right: 5%;
-    font-size: 2.8rem;
-    color: #fff;
+    font-size: clamp(2rem, 2.5vw, 2.8rem); /* Responsive font size */
+    color: #ffffff; /* White color for better contrast */
     cursor: pointer;
     display: none;
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+.icons:hover {
+    transform: scale(1.2); /* Slight enlargement on hover */
+    color: #00ff22; /* Light blue color on hover */
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8)); /* Glow effect */
 }
 
 @media (max-width: 992px) {
     .header {
-        padding: 1.3rem 5%;
+        padding: clamp(1rem, 2vw, 1.3rem) clamp(3%, 5vw, 5%);
     }
 }
 
 @media (max-width: 768px) {
     .icons {
         display: inline-flex;
-    }
-
-    .logo img {
-        max-width: 120px; /* Aumenta el tamaño máximo del logo */
-        height: auto;
     }
 
     #check:checked~.icons #menu-icon {
@@ -199,86 +193,22 @@ footer {
         left: 0;
         width: 100%;
         height: 0;
+        max-height: none;
+        overflow: hidden;
         background: rgba(0, 0, 0, .1);
         backdrop-filter: blur(50px);
         z-index: -1;
-        overflow: hidden;
         transition: .3s ease;
     }
 
     #check:checked~.navbar {
-        height: 17.7rem;
-    }
-
-    .navbar a {
-        display: block;
-        font-size: 1.1rem;
-        margin: 1.5rem 0;
-        text-align: center;
-        transform: translateY(-50px);
-        opacity: 0;
-        transition: .3s ease;
-    }
-
-    #check:checked~.navbar a {
-        transform: translateY(0);
-        opacity: 1;
-        transition-delay: calc(.15s * var(--i));
-    }
-
-    .logo img {
-        max-width: 100px;
         height: auto;
-        display: block;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 992px){
-    .header {
-        padding: 1.3rem 5%;
-    }
-}
-
-@media (max-width: 768px){
-    .icons {
-        display: inline-flex;
-    }
-
-    #check:checked~.icons #menu-icon {
-        display: none;
-    }
-
-    .icons #close-icon{
-        display: none;
-    }
-
-    #check:checked~.icons #close-icon {
-        display: block;
-    }
-
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        height: 0;
-        background: rgba(0, 0, 0, .1);
-        backdrop-filter: blur(50px);
-        z-index: -1;
-        overflow: hidden;
-        transition: .3s ease;
-        
-    }
-
-    #check:checked~.navbar {
-        height: 17.7rem;
     }
 
     .navbar a {
         display: block;
-        font-size: 1.1rem;
-        margin: 1.5rem 0;
+        font-size: clamp(1rem, 2.5vw, 1.1rem);
+        margin: clamp(0.8rem, 2vw, 1.5rem) 0;
         text-align: center;
         transform: translateY(-50px);
         opacity: 0;
@@ -292,9 +222,9 @@ footer {
     }
 
     .logo img {
-        width: 100px; /* Tamaño fijo */
-        height: 100px; /* Tamaño fijo */
-        object-fit: contain; /* Mantener proporciones */
+        width: clamp(80px, 10vw, 100px);
+        height: clamp(80px, 10vw, 100px);
+        object-fit: contain;
     }
 
     .logo {
@@ -303,60 +233,39 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100px; /* Tamaño fijo */
-        height: 100px; /* Tamaño fijo */
+        width: clamp(80px, 10vw, 100px);
+        height: clamp(80px, 10vw, 100px);
         overflow: hidden;
-    }
-
-    .home .content p {
-        font-size: 1.em; /* Aumentar aún más el tamaño de fuente */
-        color: #ffffff; /* Cambiar a blanco puro para mayor contraste */
-        line-height: 2; /* Incrementar el espaciado entre líneas */
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada para mejor visibilidad */
-    }
-
-    .home .content h1 {
-        font-size: 2rem; /* Reduce el tamaño del texto */
-        text-align: center; /* Asegura que el texto esté centrado */
-    }
-
-    .home .content p {
-        font-size: 1rem; /* Reduce el tamaño del texto */
-        line-height: 1.4; /* Mejora la legibilidad */
-        margin-top: 10px; /* Ajusta el margen superior */
-    }
-
-    .home .content img {
-        width: 200px; /* Reduce el tamaño de la imagen */
-        height: auto; /* Mantiene las proporciones */
     }
 }
 
 @media (max-width: 576px) {
     .home .content h1 {
-        font-size: 2rem; /* Ajusta aún más el tamaño del texto */
+        font-size: clamp(1.5rem, 4vw, 2rem);
     }
 
     .home .content p {
-        font-size: 0.9rem; /* Reduce aún más el tamaño del texto */
-        line-height: 1.3; /* Ajusta la legibilidad */
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+        line-height: clamp(1.2, 2vw, 1.3);
     }
 
     .home .content img {
-        width: 150px; /* Reduce aún más el tamaño de la imagen */
+        width: clamp(100px, 20vw, 150px);
+        filter: drop-shadow(0 0 5px rgba(0, 255, 13, 0.973));
     }
 
     .pie-pagina .grupo-1 .box {
-        width: 80%; /* Reducir el ancho del contenedor */
-        margin: 10px auto; /* Centrar y ajustar margen */
+        width: clamp(70%, 90%, 80%);
+        margin: 10px auto;
     }
 
     .pie-pagina .grupo-1 {
-        gap: 10px; /* Reducir el espacio entre contenedores */
+        gap: clamp(5px, 2vw, 10px);
     }
 
     .logo img {
-        max-width: 140px; /* Aumenta aún más el tamaño del logo */
+        max-width: clamp(100px, 15vw, 140px);
+        filter: drop-shadow(0 0 5px rgba(0, 255, 42, 0.973));
         height: auto;
     }
 }
@@ -368,54 +277,45 @@ footer {
 /*footer__________________________________________________________________________________*/
 
 .pie-pagina {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
     width: 100%;
-    background: linear-gradient(to right, #011312, #084440, #051d1d);
-    padding: 30px 15px; /* Aumentar el padding para mayor espacio */
+    background: linear-gradient(to right, #011312, #084440, #011312);
+    padding: 20px 0;
     color: #fff;
     box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.5);
-    font-size: 1.1rem; /* Ajustar el tamaño del texto */
-    line-height: 1.6; /* Incrementar el espaciado entre líneas */
-    border-top: 2px solid rgba(255, 255, 255, 0.2); /* Agregar un borde superior */
-    color: rgba(255, 255, 255, 0.9); /* Mejorar el contraste */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Agregar sombra para destacar el texto */
+    gap: 20px;
+    filter: drop-shadow(0 -2px 2px rgba(255, 255, 255, 0.8)); /* Línea blanca arriba del footer */
 }
 
 .pie-pagina .grupo-1 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
-    gap: 30px; /* Incrementar el espacio entre los contenedores */
+    gap: 5px;
+}
+
+.grupo-1 .box-1,
+.grupo-1 .box-2,
+.grupo-1 .box-3 {
+    margin: 0 auto;
 }
 
 .grupo-1 .box-1 {
-    width: 260px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 150px; /* Reducir la altura */
     gap: 15px;
-    padding: 15px; /* Reducir el padding interno */
+    padding: 15px;
     border-radius: 10px;
     background: linear-gradient(to right, #011312, #084440, #051d1d);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-right: 20px; /* Espaciado fijo a la derecha de box-2 */
-    transform: scale(1); /* Estado inicial */
-}
-
-.grupo-1 .box-1:hover {
-    transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+    width: fit-content;
+    height: auto;
 }
 
 .grupo-1 .box-1 img {
@@ -424,12 +324,11 @@ footer {
     align-items: center;
     text-align: center;
     padding: 20px;
-    width: 150px; /* Reducir el tamaño de la imagen */
-    height: auto; /* Mantiene proporciones */
-    object-fit: contain; /* Asegura que la imagen no se deforme */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.979)); /* Sombra blanca para destacar */
-
+    width: clamp(100px, 15vw, 150px);
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.979));
 }
 
 .grupo-1 .box-2 {
@@ -437,41 +336,31 @@ footer {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    
-    padding: 15px; /* Reducir el padding interno */
+    gap: 15px;
+    padding: 15px;
     border-radius: 10px;
     background: linear-gradient(to right, #011312, #084440, #051d1d);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    flex: 1; /* Asegura que box-2 ocupe el espacio restante */
-    text-align: center; /* Centra el contenido de box-2 */
 }
 
 .grupo-1 .box-2 h2 {
-    font-size: 1.5rem; /* Reducir el tamaño del texto */
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 10px;
     text-transform: uppercase;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
-    text-transform: uppercase; /* Convertir texto a mayúsculas */
-    letter-spacing: 1px; /* Agregar espaciado entre letras */
-    font-weight: bold; /* Resaltar encabezados */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .grupo-1 .box-2 p {
-    font-size: 0.9rem; /* Reducir el tamaño del texto */
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
     line-height: 1.6;
     color: #dcdcdc;
     max-width: 600px;
-    margin: 0 auto; /* Centra el párrafo */
-    text-align: center; /* Centra el texto */
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
-    font-size: 1rem; /* Ajustar el tamaño del texto */
-    line-height: 1.8; /* Incrementar el espaciado entre líneas */
-    color: rgba(255, 255, 255, 0.85); /* Mejorar el contraste */
-    text-align: justify; /* Justificar el texto para un diseño más limpio */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra más sutil */
+    margin: 0 auto;
+    text-align: center;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .grupo-1 .box-2 a:hover {
@@ -479,556 +368,343 @@ footer {
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
-        .grupo-1 .box-2 h2 {
-            font-size: 1.5rem;
-        }
-
-        .grupo-1 .box-2 p {
-            font-size: 0.9rem;
-        }
-
-        .grupo-1 .box-2 a {
-            font-size: 0.9rem;
-        }
-}
-
 .grupo-1 .box-3 {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    height: 150px; /* Reducir la altura */
+    height: 150px;
     gap: 15px;
-    padding: 15px; /* Reducir el padding interno */
+    padding: 15px;
     border-radius: 10px;
     background: linear-gradient(to right, #011312, #084440, #051d1d);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin-left: 30px; /* Espaciado fijo a la izquierda de box-2 */
-    transform: scale(1); /* Estado inicial */
-}
-
-.grupo-1 .box-3:hover {
-    transform: scale(1.05); /* Efecto de agrandamiento al pasar el cursor */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
 }
 
 .grupo-1 .box-3 h2 {
-    font-size: 1.5rem; /* Reducir el tamaño del texto */
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 10px;
     text-transform: uppercase;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para destacar el texto */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .grupo-1 .box-3 a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 30px; /* Reducir el tamaño de los íconos */
-    height: 30px;
+    width: clamp(20px, 5vw, 30px);
+    height: clamp(20px, 5vw, 30px);
     gap: 20px;
-    background: linear-gradient(to right, #034943, #0c6b72);
+    background: linear-gradient(to right, #0a5d73, #1fc2d1);
     color: #fff;
-    font-size: 1rem; /* Reducir el tamaño del texto de los íconos */
-    border-radius: 50%; /* Hacer los íconos circulares */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.925));
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
 }
 
 .grupo-1 .box-3 a:hover {
-    transform: scale(1.2); /* Efecto de agrandamiento */
+    transform: scale(1.2);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-    background: linear-gradient(to right, #15686e, #064b20); /* Cambiar gradiente al pasar el cursor */
+    background: linear-gradient(to right, #00bfff, #1e90ff);
 }
 
 .pie-pagina .grupo-2 {
-    font-size: 1.1rem; /* Aumentar ligeramente el tamaño del texto */
+    font-size: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 15px;
-    padding: 15px; /* Reducir el padding interno */
+    padding: 15px;
     border-radius: 10px;
     background: linear-gradient(to right, #011312, #084440, #051d1d);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    color: rgba(255, 255, 255, 0.9); /* Mejorar el contraste */
 }
 
-.grupo-2{
-    width: 100%;
-}
-
-.grupo-2 .pdf{
+.grupo-2 .pdf {
     button {
         background: linear-gradient(to right, #011312, #084440, #051d1d);
         color: #fff;
-        font-size: 1rem; /* Aumentar el tamaño del texto */
+        font-size: clamp(0.7rem, 1.5vw, 0.9rem);
         font-weight: 600;
-        padding: 10px 20px; /* Ajustar el tamaño del botón */
+        padding: clamp(5px, 1vw, 8px) clamp(10px, 2vw, 15px);
         border: none;
         border-radius: 5px;
         cursor: pointer;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
         transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-        background: linear-gradient(to right, #011312, #084440, #051d1d); /* Cambiar gradiente */
     }
 
     button:hover {
         transform: scale(1.05);
-        background: linear-gradient(to right, #15686e, #064b20); /* Cambiar gradiente al pasar el cursor */
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        background: linear-gradient(to right, #084440, #011312, #084440);
+        filter: drop-shadow(0 0 5px rgba(39, 38, 3, 0.973));
     }
 
     button:active {
         transform: scale(0.95);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        filter: drop-shadow(0 0 5px rgba(13, 162, 207, 0.973));
     }
 }
 
 .grupo-3 {
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 15px;
-    padding: 15px; /* Reducir el padding interno */
+    padding: 15px;
     border-radius: 10px;
     background: linear-gradient(to right, #011312, #084440, #051d1d);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
-.grupo-3 .credito{
-    font-size: 1rem; /* Ajustar el tamaño del texto */
-    color: rgba(255, 255, 255, 0.8); /* Mejorar el contraste */
+.grupo-3 .credito {
+    font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+    color: #fff;
     text-align: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra más sutil */
-    font-size: 1rem; /* Ajustar el tamaño del texto */
-    line-height: 1.8; /* Incrementar el espaciado entre líneas */
-    color: rgba(255, 255, 255, 0.85); /* Mejorar el contraste */
-    text-align: justify; /* Justificar el texto para un diseño más limpio */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra más sutil */
-    text-transform: uppercase; /* Convertir texto a mayúsculas */
-    letter-spacing: 1px; /* Agregar espaciado entre letras */
-    font-weight: bold; /* Resaltar encabezados */
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 @media (max-width: 768px) {
-    .pie-pagina {
-        font-size: 0.9rem; /* Reducir el tamaño de fuente */
-        gap: 15px; /* Reducir el espacio entre elementos */
-    }
-
     .pie-pagina .grupo-1 {
-        flex-direction: column; /* Apilar los contenedores verticalmente */
-        align-items: center; /* Centrar los contenedores */
-        gap: 20px; /* Espaciado uniforme entre contenedores */
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
     }
 
     .pie-pagina .grupo-1 .box {
-        width: 100%; /* Asegurar que todos los contenedores tengan el mismo ancho */
-        margin: 0 auto; /* Centrar los contenedores */
-    }
-
-    .pie-pagina .grupo-2,
-    .pie-pagina .grupo-3 {
-        width: 100%; /* Asegurar que ocupen todo el ancho disponible */
-        text-align: center; /* Centrar el contenido */
-        padding: 10px; /* Reducir el padding */
-    }
-
-    .pie-pagina .grupo-1 .box {
-        width: 90%; /* Ajustar el ancho de los contenedores */
-        margin: 0 auto; /* Centrar los contenedores */
+        width: 90%;
+        margin: 0 auto;
     }
 
     .pie-pagina .grupo-2 {
-        text-align: center; /* Centrar el texto */
-        padding: 10px; /* Reducir el padding */
-        font-size: 0.9rem; /* Reducir el tamaño del texto */
+        text-align: center;
+        padding: 10px;
     }
 
     .pie-pagina .grupo-3 {
-        text-align: center; /* Centrar el texto */
-        padding: 10px; /* Reducir el padding */
-        font-size: 0.9rem; /* Reducir el tamaño del texto */
+        text-align: center;
+        padding: 10px;
     }
 
     .pie-pagina .grupo-3 .credito {
-        font-size: 0.8rem; /* Ajustar el tamaño del texto */
-    }
-
-    .pie-pagina .grupo-1 {
-        flex-direction: column; /* Apilar los contenedores verticalmente */
-        align-items: center; /* Centrar los contenedores */
-        gap: 20px; /* Espaciado entre contenedores */
-    }
-
-    .pie-pagina .grupo-1 .box {
-        width: 90%; /* Ajustar el ancho de los contenedores */
-        margin: 0 auto; /* Centrar los contenedores */
-    }
-
-    .pie-pagina .grupo-2 {
-        text-align: center; /* Centrar el texto */
-        padding: 10px; /* Reducir el padding */
-    }
-
-    .pie-pagina .grupo-3 {
-        text-align: center; /* Centrar el texto */
-        padding: 10px; /* Reducir el padding */
-    }
-
-    .pie-pagina .grupo-3 .credito {
-        font-size: 0.8rem; /* Ajustar el tamaño del texto */
-    }
-}
-
-@media (max-width: 576px) {
-    .pie-pagina {
-         /* Reducir aún más el padding */
-        font-size: 0.8rem; /* Reducir el tamaño de fuente */
-        gap: 10px; /* Reducir el espacio entre elementos */
-    }
-
-    .pie-pagina .grupo-1 {
-        gap: 15px; /* Reducir el espacio entre contenedores */
-    }
-
-    .pie-pagina .grupo-1 .box {
-        width: 100%; /* Mantener el ancho uniforme */
-    }
-
-    .pie-pagina .grupo-2,
-    .pie-pagina .grupo-3 {
-        width: 100%; /* Mantener el ancho uniforme */
-        padding: 5px; /* Reducir aún más el padding */
-    }
-
-    .pie-pagina .grupo-3 .credito {
-        font-size: 0.7rem; /* Reducir el tamaño del texto */
-    }
-
-    .pie-pagina .grupo-1 .box {
-        width: 100%; /* Usar todo el ancho disponible */
-    }
-
-    .pie-pagina .grupo-1 .box img {
-        width: 100px; /* Reducir el tamaño de las imágenes */
-        height: auto; /* Mantener proporciones */
-    }
-
-    .pie-pagina .grupo-1 .box h2 {
-        font-size: 1.1rem; /* Reducir el tamaño de los encabezados */
-    }
-
-    .pie-pagina .grupo-1 .box p {
-        font-size: 0.7rem; /* Reducir el tamaño del texto */
-    }
-
-    .pie-pagina .grupo-1 .box a {
-        width: 20px; /* Reducir el tamaño de los íconos */
-        height: 20px;
-        font-size: 0.8rem; /* Reducir el tamaño del texto de los íconos */
-    }
-
-    .pie-pagina .grupo-2 {
-        font-size: 0.8rem; /* Reducir el tamaño del texto */
-        padding: 5px 10px; /* Reducir el padding */
-    }
-
-    .pie-pagina .grupo-2 button {
-        font-size: 0.7rem; /* Reducir el tamaño del texto del botón */
-        padding: 5px 10px; /* Reducir el tamaño del botón */
-    }
-
-    .pie-pagina .grupo-3 {
-        font-size: 0.8rem; /* Reducir el tamaño del texto */
-        padding: 5px 10px; /* Reducir el padding */
-    }
-
-    .pie-pagina .grupo-3 .credito {
-        font-size: 0.7rem; /* Reducir aún más el tamaño del texto */
-    }
-
-    .pie-pagina .grupo-1 {
-        gap: 15px; /* Reducir el espacio entre contenedores */
-    }
-
-    .pie-pagina .grupo-1 .box {
-        width: 100%; /* Usar todo el ancho disponible */
-    }
-
-    .pie-pagina .grupo-2 button {
-        font-size: 0.7rem; /* Reducir el tamaño del texto del botón */
-        padding: 5px 10px; /* Reducir el tamaño del botón */
-    }
-
-    .pie-pagina .grupo-3 .credito {
-        font-size: 0.7rem; /* Reducir aún más el tamaño del texto */
+        font-size: 0.8rem;
     }
 
     .pie-pagina .grupo-1 .box-1 img,
     .pie-pagina .grupo-1 .box-2 img,
     .pie-pagina .grupo-1 .box-3 img {
-        width: 100px; /* Reducir aún más el tamaño de las imágenes */
+        width: clamp(100px, 15vw, 150px);
+        height: auto;
     }
 
     .pie-pagina .grupo-1 .box-2 h2,
     .pie-pagina .grupo-1 .box-3 h2 {
-        font-size: 1.1rem; /* Reducir aún más el tamaño de los encabezados */
+        font-size: clamp(1.1rem, 2vw, 1.5rem);
     }
 
     .pie-pagina .grupo-1 .box-2 p {
-        font-size: 0.7rem; /* Reducir aún más el tamaño del texto */
+        font-size: clamp(0.7rem, 1.5vw, 0.9rem);
     }
 
     .pie-pagina .grupo-1 .box-3 a {
-        width: 20px; /* Reducir aún más el tamaño de los íconos */
-        height: 20px;
-        font-size: 0.8rem; /* Reducir aún más el tamaño del texto de los íconos */
+        width: clamp(20px, 5vw, 30px);
+        height: clamp(20px, 5vw, 30px);
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
     }
 
     .pie-pagina .grupo-2 button {
-        font-size: 0.7rem; /* Reducir aún más el tamaño del texto del botón */
-        padding: 5px 10px; /* Reducir aún más el tamaño del botón */
+        font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+        padding: clamp(5px, 1vw, 8px) clamp(10px, 2vw, 15px);
     }
 
     .pie-pagina .grupo-3 .credito {
-        font-size: 0.7rem; /* Reducir aún más el tamaño del texto */
-    }
-
-    .video-container,
-    .video-box,
-    .Prensa-box {
-        width: 90%; /* Ocupa el 90% del ancho */
-        margin: 0 auto; /* Centra el contenido horizontalmente */
-    }
-
-    .Prensa-box {
-        grid-template-columns: repeat(1, 1fr); /* Cambia a 1 columna */
-        gap: 15px; /* Reduce el espacio entre columnas */
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        font-size: 0.9rem; /* Reduce el tamaño del texto para pantallas medianas */
+        font-size: clamp(0.7rem, 1.5vw, 0.9rem);
     }
 }
 
 @media (max-width: 576px) {
-    .container {
-        font-size: 0.8rem; /* Reduce aún más el tamaño del texto para pantallas pequeñas */
+    .pie-pagina .grupo-1 {
+        gap: 15px;
+    }
+
+    .pie-pagina .grupo-1 .box {
+        width: 100%;
+    }
+
+    .pie-pagina .grupo-2 button {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.7rem;
+    }
+
+    .pie-pagina .grupo-1 .box-1 img,
+    .pie-pagina .grupo-1 .box-2 img,
+    .pie-pagina .grupo-1 .box-3 img {
+        width: 100px;
+    }
+
+    .pie-pagina .grupo-1 .box-2 h2,
+    .pie-pagina .grupo-1 .box-3 h2 {
+        font-size: 1.1rem;
+    }
+
+    .pie-pagina .grupo-1 .box-2 p {
+        font-size: 0.7rem;
+    }
+
+    .pie-pagina .grupo-1 .box-3 a {
+        width: 20px;
+        height: 20px;
+        font-size: 0.8rem;
+    }
+
+    .pie-pagina .grupo-2 button {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+    }
+
+    .pie-pagina .grupo-3 .credito {
+        font-size: 0.7rem;
     }
 }
 
-@media (max-width: 768px) {
-    .container h2 {
-        font-size: 1.5rem; /* Reduce el tamaño de los encabezados */
-    }
-
-    .container h3 {
-        font-size: 1.2rem; /* Reduce el tamaño de los subtítulos */
-    }
-
-    .container p {
-        font-size: 0.9rem; /* Reduce el tamaño del texto */
-        line-height: 1.4; /* Ajusta el espaciado entre líneas */
-    }
-
-    .container .cta-button {
-        font-size: 0.8rem; /* Reduce el tamaño del texto del botón */
-        padding: 8px 15px; /* Ajusta el padding del botón */
-    }
-}
-
-@media (max-width: 576px) {
-    .container h2 {
-        font-size: 1.2rem; /* Reduce aún más el tamaño de los encabezados */
-    }
-
-    .container h3 {
-        font-size: 1rem; /* Reduce aún más el tamaño de los subtítulos */
-    }
-
-    .container p {
-        font-size: 0.8rem; /* Reduce aún más el tamaño del texto */
-        line-height: 1.3; /* Ajusta el espaciado entre líneas */
-    }
-
-    .container .cta-button {
-        font-size: 0.7rem; /* Reduce aún más el tamaño del texto del botón */
-        padding: 6px 10px; /* Ajusta aún más el padding del botón */
-    }
-}
-
-@media (max-width: 768px) {
-    h1, h2, h3, h4, h5, h6 {
-        font-size: 90%; /* Reduce el tamaño de los encabezados */
-    }
-
-    p {
-        font-size: 0.9rem; /* Reduce el tamaño de los párrafos */
-        line-height: 1.4; /* Ajusta el espaciado entre líneas */
-    }
-
-    img {
-        max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
-        height: auto; /* Mantiene las proporciones */
-    }
-
-    a {
-        font-size: 0.9rem; /* Reduce el tamaño de los enlaces */
-    }
-
-    button {
-        font-size: 0.9rem; /* Reduce el tamaño del texto en los botones */
-        padding: 8px 15px; /* Ajusta el padding de los botones */
-    }
-
-    iframe {
-        width: 100%; /* Asegura que el iframe ocupe todo el ancho disponible */
-        height: auto; /* Ajusta la altura automáticamente */
-    }
-
-    .icon {
-        font-size: 1.5rem; /* Reduce el tamaño de los íconos */
-    }
-}
-
-@media (max-width: 576px) {
-    h1, h2, h3, h4, h5, h6 {
-        font-size: 80%; /* Reduce aún más el tamaño de los encabezados */
-    }
-
-    p {
-        font-size: 0.8rem; /* Reduce aún más el tamaño de los párrafos */
-        line-height: 1.3; /* Ajusta el espaciado entre líneas */
-    }
-
-    img {
-        max-width: 100%; /* Asegura que las imágenes no excedan el ancho del contenedor */
-        height: auto; /* Mantiene las proporciones */
-    }
-
-    a {
-        font-size: 0.8rem; /* Reduce aún más el tamaño de los enlaces */
-    }
-
-    button {
-        font-size: 0.8rem; /* Reduce aún más el tamaño del texto en los botones */
-        padding: 6px 10px; /* Ajusta aún más el padding de los botones */
-    }
-
-    iframe {
-        width: 100%; /* Asegura que el iframe ocupe todo el ancho disponible */
-        height: auto; /* Ajusta la altura automáticamente */
-    }
-
-    .icon {
-        font-size: 1.2rem; /* Reduce aún más el tamaño de los íconos */
-    }
-}
-
-/*main-.___________________________*/
+/*end-footer______________________________________________________________________________*/
 
 .vacio{
     width: 100%;
-    height: 120px;
+    height: 80px;
 }
 
-.video-container{
+.video-container {
     width: 100%;
+    max-width: 1200px; /* Limita el ancho máximo para mejor legibilidad */
     margin: 20px auto; /* Centra el contenedor */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 15px; /* Espacio entre los elementos dentro de la caja */
-    padding: 20px; /* Espacio alrededor de la caja */
-    border-radius: 10px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    gap: 20px; /* Incrementa el espacio entre los elementos */
+    padding: 25px; /* Aumenta el espacio alrededor de la caja */
+    border-radius: 15px; /* Bordes más redondeados */
+    background: linear-gradient(to right, #01131280, #0844407a); /* Fondo con degradado */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease; /* Transición suave para efectos */
 }
 
 .video-box h4 {
     width: 100%;
-    font-size: 2.5rem; /* Aumenta ligeramente el tamaño del texto */
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Ajusta el tamaño del texto de forma responsiva */
     color: #ffffff; /* Cambia a blanco puro para mayor contraste */
     text-align: center; /* Centra el texto */
-    margin-bottom: 15px; /* Incrementa el espacio debajo del texto */
-    font-weight: bold; /* Hace el texto más destacado */
+    margin-bottom: 20px; /* Incrementa el espacio debajo del texto */
+    font-weight: 800; /* Hace el texto más destacado */
     text-transform: uppercase; /* Convierte el texto a mayúsculas */
-    letter-spacing: 1.5px; /* Agrega espaciado entre letras */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); /* Agrega una sombra para resaltar el texto */
+    letter-spacing: 2px; /* Incrementa el espaciado entre letras */
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.9); /* Agrega una sombra más pronunciada */
     transition: color 0.3s ease, transform 0.3s ease; /* Transición suave para efectos */
 }
 
 .Prensa-box {
-    display: flex; /* Cambiar a flexbox */
+    display: flex; /* Usar flexbox para organizar los elementos */
     flex-wrap: wrap; /* Permitir que los elementos se ajusten a la siguiente línea */
-    justify-content: space-between; /* Distribuir los elementos con espacio entre ellos */
-    gap: 20px; /* Espacio entre los elementos */
-    width: 90%; /* Ajustar el ancho */
-    margin: 0 auto; /* Centrar el contenedor */
-    padding: 20px; /* Espacio interno */
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    justify-content: center; /* Centrar los elementos horizontalmente */
+    max-width: 1200px; /* Limitar el ancho máximo */
+    border-radius: 20px; /* Bordes más redondeados */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos */
 }
 
 .Prensa-box img {
-    width: 130px !important; /* Reduce el tamaño de las imágenes */
+    width: clamp(100px, 15vw, 130px); /* Ajusta el tamaño de las imágenes de forma responsiva */
     height: auto; /* Mantiene las proporciones */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para las imágenes */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos */
-    margin-top: 30px;
+    border-radius: 15px; /* Bordes más redondeados */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Transición suave para efectos */
+    margin-top: 20px; /* Reduce el margen superior */
+    filter: brightness(0.9); /* Aplica un filtro de brillo */
+}
+
+.Prensa-box img:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Sombra más intensa al pasar el cursor */
+    filter: brightness(1); /* Restaura el brillo al pasar el cursor */
 }
 
 .Prensa-box .cinelatino {
-    width: 400px; /* Asegura que el contenedor ocupe todo el ancho disponible */
+    width: clamp(70%, 50%, 400px); /* Ajusta el ancho para ocupar el 90% del viewport al minimizar */
     height: auto;
     text-align: center; /* Centra el contenido */
-    background-color: #ffffff;
-    gap: 20px; /* Espacio entre los elementos dentro de la caja */
-    border-radius: 15px;
+    background-color: #ffffff; /* Fondo blanco para contraste */
+    border-radius: 15px; /* Bordes redondeados */
+    gap: 20px; /* Espacio entre los elementos internos */
+    padding: 20px; /* Espacio interno para mejor separación */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para resaltar el contenedor */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos */
+}
+
+.Prensa-box .cinelatino:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada al pasar el cursor */
 }
 
 /* Styles for paragraphs inside .cinelatino */
 .Prensa-box .cinelatino p {
-    font-size: 1rem; /* Aumenta ligeramente el tamaño del texto */
-    color: #000000; /* Cambia a blanco puro para mayor contraste */
+    font-size: clamp(0.9rem, 2vw, 1.2rem); /* Ajusta el tamaño del texto de forma responsiva */
+    color: #333333; /* Cambia a un gris oscuro para mejor contraste */
     text-align: center; /* Centra el texto */
-    margin: 20px; /* Incrementa el espacio encima del texto */
-    font-weight: bold; /* Hace el texto más destacado */
-    text-transform: uppercase; /* Convierte el texto a mayúsculas */
-    letter-spacing: 1.5px; /* Agrega espaciado entre letras */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); /* Agrega una sombra para resaltar el texto */
+    margin: 15px 0; /* Ajusta el margen superior e inferior */
+    font-weight: 600; /* Hace el texto moderadamente destacado */
+    text-transform: capitalize; /* Convierte la primera letra de cada palabra a mayúscula */
+    letter-spacing: 1px; /* Ajusta ligeramente el espaciado entre letras */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Agrega una sombra sutil para resaltar el texto */
+    line-height: 1.5; /* Mejora la legibilidad con un mayor espaciado entre líneas */
 }
 
 /* Styles for iframes inside .cinelatino */
 .Prensa-box .cinelatino iframe {
-    width: 80%; /* Asegura que el iframe ocupe el 80% del ancho disponible */
-    height: auto; /* Mantiene las proporciones */
-    border-radius: 10px; /* Bordes redondeados para el iframe */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para el iframe */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos */
-    margin-bottom: 20px;
+    width: 100%; /* Asegura que el iframe ocupe todo el ancho disponible */
+    max-width: 800px; /* Limita el ancho máximo para mejor legibilidad */
+    aspect-ratio: 16 / 9; /* Mantiene una proporción estándar de video */
+    border-radius: 15px; /* Bordes más redondeados para el iframe */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada para resaltar el iframe */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; /* Transición suave para efectos */
+    margin-bottom: 25px; /* Incrementa el espacio inferior */
+    filter: brightness(0.95); /* Aplica un filtro de brillo sutil */
+}
+
+.Prensa-box .cinelatino iframe:hover {
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Sombra más intensa al pasar el cursor */
+    filter: brightness(1); /* Restaura el brillo al pasar el cursor */
 }
 
 .Prensa-box .cinelatino a {
     display: inline-block; /* Asegura que el enlace se comporte como un bloque */
     text-decoration: none; /* Elimina el subrayado del enlace */
-    color: #4c00ff; /* Cambia a blanco puro para mayor contraste */
-    font-size: 1rem; /* Aumenta ligeramente el tamaño del texto */
-    padding: 10px 20px; /* Espacio alrededor del texto del enlace */
-    border-radius: 5px; /* Bordes redondeados para el enlace */
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave para efectos */
+    color: #ffffff; /* Cambia a blanco puro para mayor contraste */
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem); /* Ajusta el tamaño del texto de forma responsiva */
+    padding: 12px 25px; /* Incrementa el espacio alrededor del texto del enlace */
+    border-radius: 8px; /* Bordes más redondeados para el enlace */
+    background: linear-gradient(to right, #4c00ff, #8a2be2); /* Fondo con degradado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el enlace */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos */
+}
+
+.Prensa-box .cinelatino a:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del enlace */
+    background: linear-gradient(to right, #8a2be2, #4c00ff); /* Cambia el degradado al pasar el cursor */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada al pasar el cursor */
+    color: #f0e68c; /* Cambia el color del texto al pasar el cursor */
 }
 
 .Prensa-box .cinelatino a:hover {
@@ -1037,24 +713,38 @@ footer {
 }
 
 .botones button {
-    font-size: 1.2rem; /* Incrementa ligeramente el tamaño del texto */
+    font-size: clamp(1rem, 2.5vw, 1.2rem); /* Ajusta el tamaño del texto de forma responsiva */
     font-weight: 700; /* Hace el texto más destacado */
-    padding: 15px 30px; /* Ajusta el tamaño del botón */
+    padding: clamp(10px, 2vw, 15px) clamp(20px, 5vw, 30px); /* Ajusta el tamaño del botón de forma responsiva */
     border: none;
-    border-radius: 10px; /* Bordes más redondeados */
+    border-radius: 12px; /* Bordes más redondeados */
     cursor: pointer;
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease; /* Transición suave para efectos */
     margin: 20px auto; /* Centra el botón horizontalmente */
     text-align: center; /* Centra el texto dentro del botón */
     text-decoration: none; /* Elimina el subrayado del enlace */
     text-transform: uppercase; /* Convierte el texto a mayúsculas */
-    letter-spacing: 1.5px; /* Incrementa el espaciado entre letras */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8); /* Sombra más pronunciada para destacar el texto */
-    width: 240px; /* Ancho fijo para el botón */
-    height: 60px; /* Altura fija para el botón */
+    letter-spacing: 1.8px; /* Incrementa el espaciado entre letras */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* Sombra más pronunciada para destacar el texto */
+    width: clamp(200px, 20vw, 260px); /* Ancho ajustable de forma responsiva */
+    height: clamp(50px, 10vw, 70px); /* Altura ajustable de forma responsiva */
     display: flex; /* Usar flexbox para centrar el contenido */
     justify-content: center; /* Centrar horizontalmente */
     align-items: center; /* Centrar verticalmente */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el botón */
+}
+
+.botones button:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del botón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada al pasar el cursor */
+    background: linear-gradient(to right, #8a2be2, #4c00ff); /* Cambia el degradado al pasar el cursor */
+    color: #f0e68c; /* Cambia el color del texto al pasar el cursor */
+}
+
+.botones button:active {
+    transform: scale(0.95); /* Reduce ligeramente el tamaño al hacer clic */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra más sutil al hacer clic */
+    background: linear-gradient(to right, #3a00cc, #6a1bb2); /* Fondo más oscuro al hacer clic */
 }
 
 .botones button:hover {
@@ -1161,7 +851,7 @@ footer {
     .video-box,
     .Prensa-box {
         width: 90% !important; /* Forzar el 90% del ancho */
-        margin: 0 auto; /* Centrar el contenido horizontalmente */
+        margin: 0 auto; /* Centra el contenido horizontalmente */
     }
 
     .Prensa-box {

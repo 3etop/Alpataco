@@ -60,6 +60,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("banner-audio");
+    let muteButton = document.getElementById("mute-button");
+
+    // Crear el botón de mute si no existe
+    if (!muteButton) {
+        const audioControl = document.createElement("div");
+        audioControl.id = "audio-control";
+
+        muteButton = document.createElement("button");
+        muteButton.id = "mute-button";
+        muteButton.textContent = "🔊"; // Estado inicial
+
+        audioControl.appendChild(muteButton);
+        document.body.appendChild(audioControl); // Agregar al cuerpo del documento
+    }
+
+    if (audio && muteButton) {
+        muteButton.textContent = audio.muted ? "🔇" : "🔊";
+
+        muteButton.addEventListener("click", () => {
+            audio.muted = !audio.muted;
+            muteButton.textContent = audio.muted ? "🔇" : "🔊";
+        });
+    }
+});
+
 
 
 
