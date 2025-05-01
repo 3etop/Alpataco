@@ -85,6 +85,30 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Reiniciar otros videos al hacer clic en un video (para dispositivos móviles)
+        video.addEventListener('click', () => {
+            document.querySelectorAll('.video').forEach(otherVideo => {
+                if (otherVideo !== video) {
+                    const iframe = otherVideo.querySelector('iframe');
+                    if (iframe) {
+                        const src = iframe.src;
+                        iframe.src = ''; // Limpia el src para reiniciar el video
+                        iframe.src = src; // Restaura el src original
+                    }
+                }
+            });
+        });
+
+        // Reiniciar el video al terminar su reproducción
+        const iframe = video.querySelector('iframe');
+        if (iframe) {
+            iframe.addEventListener('ended', () => {
+                const src = iframe.src;
+                iframe.src = ''; // Limpia el src para reiniciar el video
+                iframe.src = src; // Restaura el src original
+            });
+        }
+
         window.addEventListener('click', (event) => {
             if (!video.contains(event.target)) {
                 const iframe = video.querySelector('iframe');
