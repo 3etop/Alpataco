@@ -1027,7 +1027,7 @@ h3 {
 
 .par-1 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Divide en dos columnas iguales */
+    grid-template-columns: repeat(1, 1fr); /* Divide en dos columnas iguales */
     gap: 30px; /* Espaciado entre columnas */
     align-items: center;
     justify-content: center;
@@ -1066,8 +1066,7 @@ h3 {
     backdrop-filter: blur(20px); /* Aumenta el desenfoque */
     border-radius: 15px; /* Bordes más redondeados */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Sombra más pronunciada */
-    text-align: center; /* Centra el texto */
-    justify-items: center; /* Centra los elementos dentro de las celdas */
+    align-content: center; /* Centra el contenido dentro del div */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
 }
 
