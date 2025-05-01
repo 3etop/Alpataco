@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        window.addEventListener('click', (event) => {
+        const resetVideo = (event) => {
             if (!video.contains(event.target)) {
                 const iframe = video.querySelector('iframe');
                 if (iframe) {
@@ -118,7 +118,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     iframe.src = src; // Restaura el src original
                 }
             }
-        });
+        };
+
+        window.addEventListener('click', resetVideo);
+        window.addEventListener('touchstart', resetVideo); // Agregar soporte para dispositivos móviles
     });
 });
 
