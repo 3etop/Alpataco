@@ -110,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const resetVideo = (event) => {
+            // Si el clic o toque ocurre fuera del video, reinicia el iframe
             if (!video.contains(event.target)) {
                 const iframe = video.querySelector('iframe');
                 if (iframe) {
@@ -120,8 +121,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
+        // Escucha eventos de clic y toque en toda la ventana
         window.addEventListener('click', resetVideo);
-        window.addEventListener('touchstart', resetVideo); // Agregar soporte para dispositivos móviles
+        window.addEventListener('touchstart', resetVideo); // Soporte para dispositivos móviles
     });
 });
 
