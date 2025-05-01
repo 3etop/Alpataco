@@ -74,6 +74,17 @@ document.addEventListener('DOMContentLoaded', () => {
             imageModal.style.display = 'none';
         }
     });
+
+    document.querySelectorAll('.video').forEach(video => {
+        video.addEventListener('mouseleave', () => {
+            const iframe = video.querySelector('iframe');
+            if (iframe) {
+                const src = iframe.src;
+                iframe.src = ''; // Limpia el src para reiniciar el video
+                iframe.src = src; // Restaura el src original
+            }
+        });
+    });
 });
 
 

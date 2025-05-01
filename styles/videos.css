@@ -20,7 +20,7 @@ main {
     flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
     padding: 0; /* Elimina el padding adicional */
     margin: 0; /* Elimina cualquier margen */
-    background-image: url('../image/nuevo contenido/background\ galeria.webp'); /* Ruta de la imagen de fondo */
+    background-image: url('../image/images galeria/53_18_11zon.webp'); /* Ruta de la imagen de fondo */
     background-size: cover; /* Asegura que la imagen cubra todo el fondo */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -615,6 +615,12 @@ footer {
 }
 
 .Prensa-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-auto-rows: minmax(200px, auto); /* Define una altura mínima para las filas */
+    align-items: center; /* Alinea los elementos verticalmente */
+    justify-items: center; /* Alinea los elementos horizontalmente */
+    gap: 20px; /* Espacio entre los elementos */
     display: flex; /* Usar flexbox para organizar los elementos */
     flex-wrap: wrap; /* Permitir que los elementos se ajusten a la siguiente línea */
     justify-content: center; /* Centrar los elementos horizontalmente */
@@ -682,12 +688,6 @@ footer {
     filter: brightness(0.95); /* Aplica un filtro de brillo sutil */
 }
 
-.Prensa-box .cinelatino iframe:hover {
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño al pasar el cursor */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8); /* Sombra más intensa al pasar el cursor */
-    filter: brightness(1); /* Restaura el brillo al pasar el cursor */
-}
-
 .Prensa-box .cinelatino a {
     display: inline-block; /* Asegura que el enlace se comporte como un bloque */
     text-decoration: none; /* Elimina el subrayado del enlace */
@@ -698,18 +698,6 @@ footer {
     background: linear-gradient(to right, #4c00ff, #8a2be2); /* Fondo con degradado */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra para resaltar el enlace */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave para efectos */
-}
-
-.Prensa-box .cinelatino a:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño del enlace */
-    background: linear-gradient(to right, #8a2be2, #4c00ff); /* Cambia el degradado al pasar el cursor */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7); /* Sombra más pronunciada al pasar el cursor */
-    color: #f0e68c; /* Cambia el color del texto al pasar el cursor */
-}
-
-.Prensa-box .cinelatino a:hover {
-    transform: scale(1.1); /* Aumenta ligeramente el tamaño del enlace */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Agrega una sombra para resaltar */
 }
 
 .botones button {

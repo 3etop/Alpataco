@@ -1,11 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const audio = document.getElementById("banner-audio");
-    if (audio) {
-        audio.play().catch(error => {
-            console.error("Error al reproducir el audio:", error);
-        });
-    }
-
     const video = document.getElementById("background-video");
     const image = document.getElementById("background-image");
 
@@ -60,53 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const audio = document.getElementById("banner-audio");
-    let muteButton = document.getElementById("mute-button");
 
-    // Crear el botón de mute si no existe
-    if (!muteButton) {
-        const audioControl = document.createElement("div");
-        audioControl.id = "audio-control";
-
-        muteButton = document.createElement("button");
-        muteButton.id = "mute-button";
-        muteButton.textContent = "🔊"; // Estado inicial
-
-        audioControl.appendChild(muteButton);
-        document.body.appendChild(audioControl); // Agregar al cuerpo del documento
-    }
-
-    if (audio && muteButton) {
-        muteButton.textContent = audio.muted ? "🔇" : "🔊";
-
-        muteButton.addEventListener("click", () => {
-            audio.muted = !audio.muted;
-            muteButton.textContent = audio.muted ? "🔇" : "🔊";
-        });
-    }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    const audio = document.getElementById("banner-audio");
-
-    if (audio) {
-        // Verificar si es la primera visita usando localStorage
-        if (!localStorage.getItem("audioPlayed")) {
-            // Desmutear el audio antes de reproducirlo
-            audio.muted = false;
-
-            // Intentar reproducir el audio
-            audio.play().then(() => {
-                console.log("Audio reproducido correctamente.");
-                // Marcar que el audio ya se reprodujo
-                localStorage.setItem("audioPlayed", "true");
-            }).catch((error) => {
-                console.error("El navegador bloqueó la reproducción automática:", error);
-            });
-        }
-    }
-});
 
 
 
