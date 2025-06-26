@@ -132,7 +132,7 @@ main {
     position: absolute;
     right: 5%;
     font-size: clamp(2rem, 2.5vw, 2.8rem); /* Responsive font size */
-    color: #e70e0e; /* White color for better contrast */
+    color: #ffffff; /* White color for better contrast */
     cursor: pointer;
     display: none;
     transition: transform 0.3s ease, color 0.3s ease; /* Smooth transitions */

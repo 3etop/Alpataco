@@ -53,6 +53,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+audio.play().catch(() => {
+    // Si el navegador bloquea el autoplay, muestra el botón
+    btn.style.display = 'block';
+});
+
 
 
 
