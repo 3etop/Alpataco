@@ -51,11 +51,23 @@ document.addEventListener("DOMContentLoaded", () => {
             iframeOverlay.classList.remove('active'); // Verifica que la clase 'active' esté definida en el CSS
         });
     }
-});
 
-audio.play().catch(() => {
-    // Si el navegador bloquea el autoplay, muestra el botón
-    btn.style.display = 'block';
+    // AUDIO BANNER
+    const audio = document.getElementById('banner-audio');
+    const btn = document.getElementById('audio-btn');
+
+    if (audio && btn) {
+        audio.volume = 0.7;
+        audio.play().catch(() => {
+            // Si el navegador bloquea el autoplay, muestra el botón
+            btn.style.display = 'block';
+        });
+
+        btn.addEventListener('click', function() {
+            audio.play();
+            btn.style.display = 'none';
+        });
+    }
 });
 
 
