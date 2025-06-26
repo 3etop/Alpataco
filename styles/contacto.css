@@ -91,7 +91,7 @@ footer {
     object-fit: contain;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0 0 5px rgba(204, 87, 9, 0.973));
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.973));
 }
 
 .navbar a {
@@ -255,7 +255,7 @@ footer {
 
     .logo img {
         max-width: clamp(100px, 15vw, 140px);
-        filter: drop-shadow(0 0 5px rgba(226, 149, 7, 0.973));
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.973));
         height: auto;
     }
 }

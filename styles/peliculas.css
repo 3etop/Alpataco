@@ -71,7 +71,7 @@ main {
     font-weight: 700;
     display: flex;
     height: 50px;
-    filter: drop-shadow(0 0 5px rgba(124, 0, 0, 0.856));
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.856));
 }
 
 .logo img {
@@ -81,7 +81,7 @@ main {
     object-fit: contain;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0 0 5px rgba(124, 0, 0, 0.856));
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.856));
 }
 
 .navbar a {
@@ -244,7 +244,7 @@ main {
 
     .logo img {
         max-width: clamp(100px, 15vw, 140px);
-        filter: drop-shadow(0 0 5px rgb(230, 8, 8));
+        filter: drop-shadow(0 0 5px rgb(255, 255, 255));
         height: auto;
     }
 }

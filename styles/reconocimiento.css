@@ -100,7 +100,6 @@ footer {
     font-weight: 700;
     display: flex;
     height: 50px;
-    filter: drop-shadow(0 0 5px rgba(192, 158, 4, 0.925));
 }
 
 .logo img {
@@ -110,7 +109,7 @@ footer {
     object-fit: contain;
     display: block;
     margin: 0 auto;
-    filter: drop-shadow(0 0 5px rgba(192, 158, 4, 0.925));
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.925));
 }
 
 .navbar a {
@@ -259,7 +258,7 @@ footer {
 
     .home .content img {
         width: clamp(100px, 20vw, 150px);
-        filter: drop-shadow(0 0 5px rgba(192, 158, 4, 0.925));
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.925));
     }
 
     .pie-pagina .grupo-1 .box {
@@ -273,7 +272,7 @@ footer {
 
     .logo img {
         max-width: clamp(100px, 15vw, 140px);
-        filter: drop-shadow(0 0 5px rgba(226, 149, 7, 0.973));
+        filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.973));
         height: auto;
     }
 }
