@@ -353,7 +353,7 @@ section{
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-top: 40px; /* Añadido: sube el contenido */
+    padding-top: 50px; /* Antes: 40px. Ahora baja más la sección */
 }
 
 .home .content {
