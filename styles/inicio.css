@@ -353,13 +353,14 @@ section{
     display: flex;
     flex-direction: column;
     text-align: center;
+    padding-top: 40px; /* Añadido: sube el contenido */
 }
 
 .home .content {
     position: relative;
     color: #fff;
     width: 85%;
-    margin-top: 10px; 
+    margin-top: 0; /* Cambiado de 10px a 0 para subir más */
     opacity: 0;
     animation: entrada 3s 9s forwards; 
     display: flex; /* Asegura que el contenido interno se muestre */
@@ -462,12 +463,16 @@ span{
 }
 
 .home .media-icons {
-    z-index: 888;
-    position: absolute;
-    right: 5px;
+    position: fixed; /* Cambia de absolute a fixed */
+    top: 50%; /* Centra verticalmente */
+    right: 10px; /* Pegado al borde derecho */
+    transform: translateY(-50%); /* Ajusta el centro vertical */
     display: flex;
     flex-direction: column;
+    z-index: 888;
     transition: 0.5s ease;
+    /* Opcional: separa un poco del borde derecho */
+    margin-right: 10px;
 }
 
 .home .media-icons a {
@@ -813,7 +818,7 @@ span{
 
 #audio-control {
     position: fixed;
-    top: 80px;
+    top: 10px; /* Antes: 80px. Ahora más arriba */
     left: 10px;
     z-index: 1000; /* Asegura que esté por encima de otros elementos */
 }
