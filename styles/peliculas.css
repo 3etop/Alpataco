@@ -989,23 +989,3 @@ img {
         display: none !important;
     }
 }
-
-@media (max-width: 700px) {
-    .thumbnail .item {
-    position: relative;
-    z-index: 1;
-    }
-    .thumbnail .item:hover img {
-        position: fixed;
-        width: auto;
-        max-width: 100px; /* Mantiene el tamaño original de la miniatura */
-        max-height: 100px;
-        height: auto;
-        z-index: 9999 !important;
-        box-shadow: 0 8px 32px rgba(255, 254, 254, 0.7);
-        background: #111;
-        border-radius: 10px;
-        transition: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        transform: translateY(-20px); /* Hace que la imagen suba en vez de bajar */
-    }
-}
